@@ -201,3 +201,4 @@ C:\Users\Catalin\RiderProjects\FarmaShop\FarmaShop\bin\Debug\netcoreapp3.1\runti
 C:\Users\Catalin\RiderProjects\FarmaShop\FarmaShop\obj\Debug\netcoreapp3.1\FarmaShop.Views.pdb
 C:\Users\Catalin\RiderProjects\FarmaShop\FarmaShop\obj\Debug\netcoreapp3.1\FarmaShop.csproj.CopyComplete
 C:\Users\Catalin\RiderProjects\FarmaShop\FarmaShop\obj\Debug\netcoreapp3.1\FarmaShop.genruntimeconfig.cache
+C:\Users\Catalin\RiderProjects\FarmaShop\FarmaShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ShopMenuPartial.cshtml.g.cs
