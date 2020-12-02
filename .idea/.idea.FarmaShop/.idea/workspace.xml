@@ -23,21 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/css/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/js/sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/FarmaShop.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/FarmaShop.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop/bin/Debug/netcoreapp3.1/FarmaShop.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/bin/Debug/netcoreapp3.1/FarmaShop.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop/bin/Debug/netcoreapp3.1/FarmaShop.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/bin/Debug/netcoreapp3.1/FarmaShop.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.RazorCoreGenerate.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/FarmaShop.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ShopMenuPartial.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ShopMenuPartial.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop/wwwroot/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/css/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop/wwwroot/js/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/js/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop/wwwroot/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop/wwwroot/js/site.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -56,6 +51,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ShopMenuPartial.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FarmaShop/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ShopMenuPartial.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop/Areas/Identity/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -77,11 +75,13 @@
         <option value="$PROJECT_DIR$/FarmaShop/Views/Shared/ShopMenu.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop/wwwroot/playground.html" />
         <option value="$PROJECT_DIR$/FarmaShop/Views/Home/Index.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/js/sidebar.js" />
-        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/css/sidebar.css" />
-        <option value="$PROJECT_DIR$/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/js/cookiehelper.js" />
+        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/js/site.js" />
+        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/css/sidebar.css" />
+        <option value="$PROJECT_DIR$/FarmaShop/Views/Shared/_ShopMenuPartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop/wwwroot/js/sidebar.js" />
       </list>
     </option>
   </component>
@@ -97,6 +97,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.FarmaShop">
@@ -143,6 +144,8 @@
       <workItem from="1605888587127" duration="4267000" />
       <workItem from="1605895420231" duration="4391000" />
       <workItem from="1605901265883" duration="11084000" />
+      <workItem from="1606909520810" duration="470000" />
+      <workItem from="1606933697482" duration="5579000" />
     </task>
     <servers />
   </component>
@@ -171,22 +174,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="298" y="66" width="814" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605891044661" />
-    <state width="1480" height="210" key="GridCell.Tab.0.bottom" timestamp="1605914366748">
+    <state x="360" y="108" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606909993808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605914366748" />
-    <state width="1480" height="210" key="GridCell.Tab.0.center" timestamp="1605914366747">
+    <state x="360" y="108" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1606909993808" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1606939272745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605914366747" />
-    <state width="1480" height="210" key="GridCell.Tab.0.left" timestamp="1605914366747">
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606939272745" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1606939272745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605914366747" />
-    <state width="1480" height="210" key="GridCell.Tab.0.right" timestamp="1605914366748">
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606939272745" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1606939272745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1480" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605914366748" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606939272745" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1606939272745">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606939272745" />
     <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1605895369609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
