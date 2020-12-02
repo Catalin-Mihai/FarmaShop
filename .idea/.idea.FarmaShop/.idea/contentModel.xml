@@ -122,6 +122,9 @@
           <e p="serviceDependencies.local.json" t="Include" />
         </e>
         <e p="ScaffoldingReadMe.txt" t="Include" />
+        <e p="Seeds" t="Include">
+          <e p="RoleSeeder.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="ViewModels" t="Include" />
         <e p="Views" t="Include">
