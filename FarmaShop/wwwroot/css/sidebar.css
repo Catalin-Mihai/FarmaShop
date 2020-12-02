@@ -54,6 +54,10 @@ ul ul a {
     margin-left: -250px;
 }
 
+a.navbar-brand{
+    word-break: normal;
+}
+
 a[data-toggle="collapse"] {
     position: relative;
 }
