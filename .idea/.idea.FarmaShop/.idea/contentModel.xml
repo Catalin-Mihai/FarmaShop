@@ -9,11 +9,21 @@
       <e p="Data" t="IncludeRecursive">
         <e p="ApplicationDbContext.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts" t="Include" />
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
           <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
           <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="Category.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+          <e p="OrderDetail.cs" t="Include" />
+          <e p="ShoppingCart.cs" t="Include" />
+          <e p="ShoppingCartItem.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -22,9 +32,11 @@
             </e>
           </e>
         </e>
+        <e p="Repositories" t="Include" />
         <e p="Seeds" t="Include">
           <e p="Seeder.cs" t="Include" />
         </e>
+        <e p="Services" t="Include" />
       </e>
       <e p="FarmaShop.sln" t="IncludeFlat" />
       <e p="FarmaShop.Web" t="IncludeRecursive">
