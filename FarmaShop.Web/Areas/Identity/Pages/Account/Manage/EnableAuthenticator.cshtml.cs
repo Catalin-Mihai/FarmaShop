@@ -148,7 +148,7 @@ namespace FarmaShop.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("FarmaShop"),
+                _urlEncoder.Encode("FarmaShop.Web"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

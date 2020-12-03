@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using FarmaShop.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using FarmaShop.Models;
 
-namespace FarmaShop.Controllers
+namespace FarmaShop.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,6 +1,4 @@
-using System;
-
-namespace FarmaShop.Models
+namespace FarmaShop.Web.Models
 {
     public class ErrorViewModel
     {

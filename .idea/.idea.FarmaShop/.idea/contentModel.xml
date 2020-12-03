@@ -6,7 +6,28 @@
     <e p="C:\Users\Catalin\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\Catalin\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Catalin\RiderProjects\FarmaShop" t="IncludeFlat">
-      <e p="FarmaShop" t="IncludeRecursive">
+      <e p="Data" t="IncludeRecursive">
+        <e p="ApplicationDbContext.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
+          <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Seeds" t="Include">
+          <e p="Seeder.cs" t="Include" />
+        </e>
+      </e>
+      <e p="FarmaShop.sln" t="IncludeFlat" />
+      <e p="FarmaShop.Web" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Areas" t="Include">
@@ -95,23 +116,14 @@
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
         </e>
-        <e p="Data" t="Include">
-          <e p="ApplicationDbContext.cs" t="Include" />
-          <e p="Migrations" t="Include">
-            <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
-            <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
-            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
-          </e>
-        </e>
-        <e p="FarmaShop.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
-              <e p="FarmaShop.AssemblyInfo.cs" t="Include" />
-              <e p="FarmaShop.RazorAssemblyInfo.cs" t="Include" />
+              <e p="Web.AssemblyInfo.cs" t="Include" />
+              <e p="Web.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -122,9 +134,6 @@
           <e p="serviceDependencies.local.json" t="Include" />
         </e>
         <e p="ScaffoldingReadMe.txt" t="Include" />
-        <e p="Seeds" t="Include">
-          <e p="RoleSeeder.cs" t="Include" />
-        </e>
         <e p="Startup.cs" t="Include" />
         <e p="ViewModels" t="Include" />
         <e p="Views" t="Include">
@@ -142,6 +151,7 @@
             <e p="Error.cshtml" t="Include" />
           </e>
         </e>
+        <e p="Web.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="sidebar.css" t="Include" />
@@ -208,7 +218,6 @@
           <e p="playground.html" t="Include" />
         </e>
       </e>
-      <e p="FarmaShop.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
