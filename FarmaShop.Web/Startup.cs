@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FarmaShop.Data;
+using FarmaShop.Data.DAL;
+using FarmaShop.Data.Models;
 using FarmaShop.Data.Seeds;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -30,9 +32,18 @@ namespace FarmaShop
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            
+            services.AddDefaultIdentity<ApplicationUser>(
+                    options => options.SignIn.RequireConfirmedAccount = true
+                    )
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            
+            /*services.AddIdentity<ApplicationUser, IdentityRole>(
+                    options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();*/
+            
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

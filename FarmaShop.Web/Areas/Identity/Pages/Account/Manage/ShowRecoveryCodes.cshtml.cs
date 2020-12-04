@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FarmaShop.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace FarmaShop.Areas.Identity.Pages.Account.Manage
+namespace FarmaShop.Web.Areas.Identity.Pages.Account.Manage
 {
     public class ShowRecoveryCodesModel : PageModel
     {

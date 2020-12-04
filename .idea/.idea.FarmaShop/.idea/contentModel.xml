@@ -7,19 +7,28 @@
     <e p="C:\Users\Catalin\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Catalin\RiderProjects\FarmaShop" t="IncludeFlat">
       <e p="Data" t="IncludeRecursive">
-        <e p="ApplicationDbContext.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contracts" t="Include" />
+        <e p="DAL" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+        </e>
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
           <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
           <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
+          <e p="20201204110037_FarmaShopV1.cs" t="Include" />
+          <e p="20201204110037_FarmaShopV1.Designer.cs" t="Include" />
+          <e p="20201204111237_FarmaShopV2.cs" t="Include" />
+          <e p="20201204111237_FarmaShopV2.Designer.cs" t="Include" />
+          <e p="20201204114547_FarmaShopV3.cs" t="Include" />
+          <e p="20201204114547_FarmaShopV3.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ApplicationUser.cs" t="Include" />
           <e p="Category.cs" t="Include" />
           <e p="Item.cs" t="Include" />
+          <e p="ItemCategory.cs" t="Include" />
           <e p="Order.cs" t="Include" />
           <e p="OrderDetail.cs" t="Include" />
           <e p="ShoppingCart.cs" t="Include" />

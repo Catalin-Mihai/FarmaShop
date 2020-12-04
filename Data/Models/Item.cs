@@ -1,4 +1,6 @@
-﻿namespace FarmaShop.Data.Models
+﻿using System.Collections.Generic;
+
+namespace FarmaShop.Data.Models
 {
     public class Item
     {
@@ -10,16 +12,14 @@
         
         public string LongDescription { get; set; }
         
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         
         public string ImageUrl { get; set; }
         
         // public bool IsPreferedFood { get; set; }
         
         public int InStock { get; set; }
-        
-        public int CategoryId { get; set; }
-        
-        public virtual Category Category { get; set; }
+
+        public ICollection<ItemCategory> ItemCategories { get; set; }
     }
 }

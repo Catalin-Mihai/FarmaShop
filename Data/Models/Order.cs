@@ -18,7 +18,7 @@ namespace FarmaShop.Data.Models
 
         public string Country { get; set; }
 
-        public decimal OrderTotal { get; set; }
+        public double OrderTotal { get; set; }
 
         public DateTime OrderPlaced { get; set; }
 
