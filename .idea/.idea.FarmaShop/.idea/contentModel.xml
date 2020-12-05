@@ -54,7 +54,6 @@
         <e p="Seeds" t="Include">
           <e p="Seeder.cs" t="Include" />
         </e>
-        <e p="Services" t="Include" />
       </e>
       <e p="FarmaShop.sln" t="IncludeFlat" />
       <e p="FarmaShop.Web" t="IncludeRecursive">
