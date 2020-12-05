@@ -23,7 +23,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="Add .gitignore file" />
+    <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="Start the initial database population">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Seeds/Seeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Seeds/Seeder.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/DAL/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96BF7970-6344-4E2B-8BA1-2DED5D3D6307/1B/ScriptTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
@@ -209,7 +213,7 @@
       <workItem from="1607075714567" duration="5544000" />
       <workItem from="1607081881801" duration="495000" />
       <workItem from="1607111056352" duration="546000" />
-      <workItem from="1607168520812" duration="3841000" />
+      <workItem from="1607168520812" duration="8076000" />
     </task>
     <task id="LOCAL-00001" summary="Add .gitignore file">
       <created>1606939579378</created>
@@ -267,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607172836349</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Give up the services pattern idea because it will be an overkill for this pretty small project. Might be added later.">
+      <created>1607173087774</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607173087774</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Give up the services pattern idea because it will be an overkill for this pretty small project. Might be added later.">
+      <created>1607173119404</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607173119404</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +313,8 @@
     <MESSAGE value="Add main Database Models" />
     <MESSAGE value="- Add custom User class model inherited from IdentityUser &#10;- Scaffold again the Net Core Identity pages to use the custom user class.&#10;- Add many-to-many relationship between items and categories.&#10;- Add new migrations (V3 latest) to reflect the new database changes." />
     <MESSAGE value="- Add repository pattern to Data project.&#10;- Make a CRUD interface for repositories to be used for easier dependency injection. &#10;- Make a generic base repository that implements the CRUD interface.&#10;- Make separate repositories for each Entity that inherit the base repository (no code duplication purposes)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add repository pattern to Data project.&#10;- Make a CRUD interface for repositories to be used for easier dependency injection. &#10;- Make a generic base repository that implements the CRUD interface.&#10;- Make separate repositories for each Entity that inherit the base repository (no code duplication purposes)" />
+    <MESSAGE value="Give up the services pattern idea because it will be an overkill for this pretty small project. Might be added later." />
+    <option name="LAST_COMMIT_MESSAGE" value="Give up the services pattern idea because it will be an overkill for this pretty small project. Might be added later." />
   </component>
   <component name="WindowStateProjectService">
     <state x="298" y="66" width="814" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605891044661">
@@ -402,14 +421,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="217" y="113" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1607171673970" />
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1606996429442">
+    <state x="569" y="122" key="RollbackChangesDialog" timestamp="1607184247611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1606996429442" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607111600794">
+    <state x="569" y="122" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1607184247611" />
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1607175451083">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607111600794" />
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1607175451083" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607173377984">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607173377984" />
     <state x="1063" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605912023678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
