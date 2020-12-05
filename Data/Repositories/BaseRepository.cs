@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using FarmaShop.Data.DAL;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,24 +19,24 @@ namespace FarmaShop.Data.Repositories
             _dbSet = context.Set<TEntity>();
         }
         
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAll()
         {
-            return _dbSet.ToList();
+            return await _dbSet.ToListAsync();
         }
 
-        public virtual TEntity GetById(object id)
+        public virtual async Task<TEntity> GetById(object id)
         {
-            return _dbSet.Find(id);
+            return await _dbSet.FindAsync(id);
         }
 
-        public virtual void Add(TEntity entity)
+        public virtual async Task Add(TEntity entity)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
         }
 
-        public virtual void Delete(object id)
+        public virtual async Task Delete(object id)
         {
-            var entityToDelete = _dbSet.Find(id);
+            var entityToDelete = await _dbSet.FindAsync(id);
             Delete(entityToDelete);
         }
 
