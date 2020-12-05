@@ -12,6 +12,6 @@ namespace FarmaShop.Data.Models
 
         public string ImageUrl { get; set; }
         
-        public virtual IEnumerable<ItemCategory> ItemCategories { get; set; }
+        public virtual IEnumerable<Item> Items { get; set; }
     }
 }

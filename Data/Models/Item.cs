@@ -20,6 +20,6 @@ namespace FarmaShop.Data.Models
         
         public int InStock { get; set; }
 
-        public ICollection<ItemCategory> ItemCategories { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }

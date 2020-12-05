@@ -11,10 +11,12 @@ namespace FarmaShop.Data.DAL
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        /*protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             
+            // Not needed in NET 5.0.
+            // Many-to-many supported by default in NET 5.0
             // Primary key is made of itemID and categoryID (composite key)
             builder.Entity<ItemCategory>()
                 .HasKey(ic => new {ic.ItemId, ic.CategoryId}); 
@@ -31,7 +33,7 @@ namespace FarmaShop.Data.DAL
                 .HasOne(ic => ic.Category)
                 .WithMany(ic => ic.ItemCategories)
                 .HasForeignKey(bc => bc.CategoryId);
-        }
+        }*/
 
         public DbSet<Item> Items { get; set; }
         
@@ -43,6 +45,6 @@ namespace FarmaShop.Data.DAL
         
         public DbSet<OrderDetail> OrderDetails { get; set; }
         
-        public DbSet<ItemCategory> ItemCategories { get; set; } //Might be optional. Can be retrieved from Items or Categories tables. 
+        //public DbSet<ItemCategory> ItemCategories { get; set; } //Might be optional. Can be retrieved from Items or Categories tables. 
     }
 }
