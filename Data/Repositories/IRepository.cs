@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 //Crud generic repository interface
@@ -14,9 +17,9 @@ namespace FarmaShop.Data.Repositories
         void Delete(TEntity entityToUpdate); //D. // Just mark the entity as 'dirty'
         Task Delete(object id); //Delete by id;
 
-        /*IEnumerable<TEntity> Get(
+        Task<IEnumerable<TEntity>> Get(
             Expression<Func<TEntity, bool>> filter = null, 
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, 
-            string includeProperties = "");*/ // Might be very useful for dynamic filtering, ordering etc... 
+            string includeProperties = ""); // Might be very useful for dynamic filtering, ordering etc... 
     }
 }
