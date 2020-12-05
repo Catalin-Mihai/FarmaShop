@@ -145,9 +145,19 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
+          <e p="ItemController.cs" t="Include" />
+        </e>
+        <e p="DataMapper" t="Include">
+          <e p="ModelMapper.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="Category" t="Include">
+            <e p="CategoryModel.cs" t="Include" />
+          </e>
           <e p="ErrorViewModel.cs" t="Include" />
+          <e p="Item" t="Include">
+            <e p="ItemModel.cs" t="Include" />
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -157,6 +167,7 @@
             </e>
           </e>
         </e>
+        <e p="Pages" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
@@ -165,7 +176,14 @@
         </e>
         <e p="ScaffoldingReadMe.txt" t="Include" />
         <e p="Startup.cs" t="Include" />
-        <e p="ViewModels" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="Category" t="Include">
+            <e p="CategoryMenuItemViewModel.cs" t="Include" />
+          </e>
+          <e p="Item" t="Include">
+            <e p="ItemsViewModel.cs" t="Include" />
+          </e>
+        </e>
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
@@ -173,12 +191,18 @@
             <e p="Index.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
           </e>
+          <e p="Item" t="Include">
+            <e p="Items.cshtml" t="Include" />
+          </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ShopMenuPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
+            <e p="Item" t="Include">
+              <e p="_ItemPartial.cshtml" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Web.csproj" t="IncludeRecursive" />

@@ -1,39 +1,22 @@
-﻿<nav id="sidebar" class="active">
+﻿@using FarmaShop.Data.Repositories
+@using FarmaShop.Data.Models
+@using System.Collections
+@inject IRepository<Category> Repository
+@{
+    var categories = await Repository.GetAll();
+}
+
+<nav id="sidebar" class="active">
     <div class="sidebar-header">Produse</div>
     <ul class="list-unstyled components">
-        <li>
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+        @foreach (var category in categories)
+        {
+            <li>
+                @Html.ActionLink(category.Name, "Items", "Item", new {categoryId = category.Id}, null)
+            </li>
+        }
         <li>
             <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Portfolio</a>
         </li>
         <li>
             <a href="#">Contact</a>

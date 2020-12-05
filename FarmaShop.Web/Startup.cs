@@ -1,21 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FarmaShop.Data;
 using FarmaShop.Data.DAL;
 using FarmaShop.Data.Models;
+using FarmaShop.Data.Repositories;
 using FarmaShop.Data.Seeds;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace FarmaShop
+namespace FarmaShop.Web
 {
     public class Startup
     {
@@ -47,6 +43,10 @@ namespace FarmaShop
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
+            
+            // Dependency Injection 
+            // Inject needed repositories for controllers based on their specific type
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

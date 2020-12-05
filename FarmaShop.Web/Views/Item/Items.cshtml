@@ -1,0 +1,10 @@
+﻿@model FarmaShop.Web.ViewModels.Item.ItemsViewModel
+
+<div>
+    @foreach (var item in Model.Items)
+    {
+        <div>
+            @await Html.PartialAsync("Item/_ItemPartial", item)
+        </div>
+    }
+</div>
