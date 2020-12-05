@@ -32,9 +32,9 @@ namespace FarmaShop.Data.Seeds
             }
         }
 
-        async public static Task PopulateCategories()
+        /*async public static Task PopulateCategories()
         {
             
-        }
+        }*/
     }
 }
