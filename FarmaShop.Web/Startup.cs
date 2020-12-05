@@ -78,9 +78,9 @@ namespace FarmaShop
                 endpoints.MapRazorPages();
             });
 
-            Seeder seeder = new Seeder(serviceProvider, Configuration);
+            var seeder = new Seeder(serviceProvider, Configuration);
             seeder.CreateRoles().Wait();
-            
+            seeder.PopulateDatabase().Wait();
         }
     }
 }

@@ -40,19 +40,26 @@ namespace FarmaShop.Data.Seeds
             //Get the database from the DI
             var context = ServiceProvider.GetService<ApplicationDbContext>();
 
+            if (context == null) return;
+            
             context.Database.EnsureCreated(); //Create DB if it's not created
+
+            Task task1 = null;
+            Task task2 = null;
             
             if (!context.Categories.Any() || forceOverride) {
                 //No categories in the database
-                context.Categories.AddRange(Categories);
+                task1 = context.Categories.AddRangeAsync(Categories);
             }
             
             if (!context.Items.Any() || forceOverride) {
                 //No categories in the database
-                context.Items.AddRange(Items);
+                task2 = context.Items.AddRangeAsync(Items);
             }
-            
-            
+
+            if (task1 != null) await task1;
+            if (task2 != null) await task2;
+            await context.SaveChangesAsync();
         }
         
         private static readonly Category[] Categories = {
@@ -89,7 +96,12 @@ namespace FarmaShop.Data.Seeds
                 InStock = 20,
                 ShortDescription = "Short desc",
                 LongDescription = "Long Desc",
-                Price = 22.3
+                Price = 22.3,
+                Categories = new List<Category>
+                {
+                    CategoriesDict["Vitamine"],
+                    CategoriesDict["Ingrijire personala"]
+                }
             },
             new Item {
                 Name = "Item2",
@@ -97,7 +109,12 @@ namespace FarmaShop.Data.Seeds
                 InStock = 20,
                 ShortDescription = "Short desc",
                 LongDescription = "Long Desc",
-                Price = 22.3
+                Price = 22.3,
+                Categories = new List<Category>
+                {
+                    CategoriesDict["Vitamine"],
+                    CategoriesDict["Suplimente alimentare"]
+                }
             }
         };
     }

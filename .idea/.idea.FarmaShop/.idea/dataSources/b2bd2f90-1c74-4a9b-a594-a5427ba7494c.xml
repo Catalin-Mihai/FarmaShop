@@ -14,7 +14,7 @@
       <ObjectId>6</ObjectId>
       <Current>1</Current>
       <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
-      <Fingerprint>6.44154/1BF84D6F-DD12-413E-99FF-09C30F615972@DESKTOP-IS0DAPF\LOCALDB#492A89D9</Fingerprint>
+      <Fingerprint>6.44154/1BF84D6F-DD12-413E-99FF-09C30F615972@DESKTOP-IS0DAPF\LOCALDB#34DA862F</Fingerprint>
     </database>
     <database id="5" parent="1" name="master">
       <ObjectId>1</ObjectId>
@@ -65,7 +65,7 @@
     </schema>
     <schema id="19" parent="4" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2020-12-05.20:40:27.893</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2020-12-05.21:00:55.610</IntrospectionTimestamp>
       <Current>1</Current>
     </schema>
     <schema id="20" parent="4" name="guest">
