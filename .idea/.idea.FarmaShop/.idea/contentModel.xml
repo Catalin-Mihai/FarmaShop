@@ -208,6 +208,7 @@
         <e p="Web.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="item.css" t="Include" />
             <e p="sidebar.css" t="Include" />
             <e p="site.css" t="Include" />
           </e>

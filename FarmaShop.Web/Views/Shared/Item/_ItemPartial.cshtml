@@ -1,6 +1,22 @@
 ﻿@model FarmaShop.Web.Models.Item.ItemModel
 
-<div>
-    Titlu: @Model.Name
-    <br>
+<div class="card m-5" style="width: 18rem;">
+    <div class="card-body">
+        <img class="card-img-top m-2" src="favicon.ico" alt="@Model.Name Image">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.ShortDescription</p>
+        <h4 class="card-text text-center">@Model.Price Lei</h4>
+    </div>
+    @if (Model.InStock > 0 && Model.InStock < 5)
+    {
+        <div class="card-footer text-warning text-center">
+            Stoc limitat
+        </div>
+    }
+    else if (Model.InStock == 0)
+    {
+        <div class="card-footer text-warning text-center">
+            Stoc epuizat
+        </div>
+    }
 </div>

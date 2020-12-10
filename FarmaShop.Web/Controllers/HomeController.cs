@@ -20,7 +20,7 @@ namespace FarmaShop.Web.Controllers
 
         public IActionResult Index()
         {
-            _categoryRepository.GetAll();
+            // _categoryRepository.GetAll();
             return View();
         }
 
