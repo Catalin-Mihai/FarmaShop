@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using FarmaShop.Data.Models;
 using FarmaShop.Web.Models.Category;
 using FarmaShop.Web.Models.Item;
@@ -11,7 +12,6 @@ namespace FarmaShop.Web.DataMapper
 {
     public static class ModelMapper
     {
-        public const string DefaultItemImage = "favicon.ico";
         public static ItemModel ToItemModel(Item item)
         {
             var itemModel = new ItemModel {
@@ -22,14 +22,17 @@ namespace FarmaShop.Web.DataMapper
                 Price = item.Price,
                 ImageUrl = null,
                 InStock = item.InStock,
-                Categories = new List<CategoryModel>(
-                    item.Categories.Select(ToCategoryModel))
+                Categories = null
             };
+            
+            if (item.Categories != null) {
+                itemModel.Categories = new List<CategoryModel>(
+                    item.Categories.Select(ToCategoryModel));
+            }
+
             if (item.Image != null)
                 itemModel.ImageUrl = Convert.ToBase64String(item.Image);
-            else
-                itemModel.ImageUrl = DefaultItemImage;
-
+            
             return itemModel;
         }
 

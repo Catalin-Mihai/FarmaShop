@@ -1,6 +1,23 @@
-﻿@{
+﻿@model int 
+@{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<button class="btn-info" onclick="location.href='@Url.Action("AddAdmin", "Home")'">
+    Click aici pentru a deveni admin!
+</button>
+@if (Model == 1)
+{
+    <div>
+        Felicitari! Ai devenit admin!        
+    </div>
+}
+else if (Model == 2)
+{
+    <div>
+        Esti deja admin!
+    </div>
+}
+

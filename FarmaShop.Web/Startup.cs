@@ -46,6 +46,8 @@ namespace FarmaShop.Web
             
             // Dependency Injection 
             // Inject needed repositories for controllers based on their specific type
+            // Scoped = Same instance for same request. Different between requests.
+            // Transient = New instance for every controller or whatever.
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
         }
 
@@ -67,7 +69,9 @@ namespace FarmaShop.Web
 
             app.UseRouting();
 
+            //Integrated DI
             app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
