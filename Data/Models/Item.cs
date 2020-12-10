@@ -14,7 +14,7 @@ namespace FarmaShop.Data.Models
         
         public double Price { get; set; }
         
-        public string ImageUrl { get; set; }
+        public byte[] Image { get; set; }
         
         // public bool IsPreferedFood { get; set; }
         

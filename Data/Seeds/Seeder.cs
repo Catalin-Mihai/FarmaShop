@@ -92,7 +92,7 @@ namespace FarmaShop.Data.Seeds
         public static Item[] Items = {
             new Item {
                 Name = "Hepatofit Forte D80",
-                ImageUrl = null,
+                Image = null,
                 InStock = 20,
                 ShortDescription = "Short desc",
                 LongDescription = "Long Desc",
@@ -105,7 +105,7 @@ namespace FarmaShop.Data.Seeds
             },
             new Item {
                 Name = "Item2",
-                ImageUrl = null,
+                Image = null,
                 InStock = 20,
                 ShortDescription = "Short desc",
                 LongDescription = "Long Desc",

@@ -24,6 +24,8 @@
           <e p="20201204114547_FarmaShopV3.Designer.cs" t="Include" />
           <e p="20201205163941_FarmaShop-V4.cs" t="Include" />
           <e p="20201205163941_FarmaShop-V4.Designer.cs" t="Include" />
+          <e p="20201210131004_FarmaShop-V5.cs" t="Include" />
+          <e p="20201210131004_FarmaShop-V5.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
