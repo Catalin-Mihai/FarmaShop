@@ -1,8 +1,20 @@
-﻿@{
+﻿@using FarmaShop.Web.ViewModels.Category
+@model CategoryHomeItemsViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bine ați venit!</h1>
+    <p>Alegeti produsele pe care le doriti din urmatoarele categorii</p>
+</div>
+
+@* Show categories *@
+<div class="d-flex justify-content-center flex-wrap align-items-start">
+    @foreach (var category in Model.Categories)
+    {
+        <div>
+            @await Html.PartialAsync("Category/_CategoryHomePartial", category)
+        </div>
+    }
 </div>

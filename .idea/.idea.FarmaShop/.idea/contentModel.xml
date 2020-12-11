@@ -26,6 +26,8 @@
           <e p="20201205163941_FarmaShop-V4.Designer.cs" t="Include" />
           <e p="20201210131004_FarmaShop-V5.cs" t="Include" />
           <e p="20201210131004_FarmaShop-V5.Designer.cs" t="Include" />
+          <e p="20201211123129_FarmaShop-V6.cs" t="Include" />
+          <e p="20201211123129_FarmaShop-V6.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -154,7 +156,8 @@
         </e>
         <e p="Models" t="Include">
           <e p="Category" t="Include">
-            <e p="CategoryModel.cs" t="Include" />
+            <e p="CategoryHomeItemModel.cs" t="Include" />
+            <e p="CategoryMenuItemModel.cs" t="Include" />
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Item" t="Include">
@@ -180,7 +183,8 @@
         <e p="Startup.cs" t="Include" />
         <e p="ViewModels" t="Include">
           <e p="Category" t="Include">
-            <e p="CategoryMenuItemViewModel.cs" t="Include" />
+            <e p="CategoryHomeItemsViewModel.cs" t="Include" />
+            <e p="CategoryMenuItemsViewModel.cs" t="Include" />
           </e>
           <e p="Item" t="Include">
             <e p="ItemsViewModel.cs" t="Include" />
@@ -201,6 +205,9 @@
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ShopMenuPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Category" t="Include">
+              <e p="_CategoryHomePartial.cshtml" t="Include" />
+            </e>
             <e p="Error.cshtml" t="Include" />
             <e p="Item" t="Include">
               <e p="_ItemPartial.cshtml" t="Include" />

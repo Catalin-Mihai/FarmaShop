@@ -19,6 +19,6 @@ namespace FarmaShop.Web.Models.Item
 
         public int InStock { get; set; }
 
-        public IEnumerable<CategoryModel> Categories { get; set; }
+        public IEnumerable<CategoryMenuItemModel> Categories { get; set; }
     }
 }

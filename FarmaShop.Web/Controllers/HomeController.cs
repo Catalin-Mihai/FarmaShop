@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using FarmaShop.Data.Models;
@@ -29,9 +30,27 @@ namespace FarmaShop.Web.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        async public Task<IActionResult> Index()
         {
-            return View();
+            //Send categories
+
+            var categories = await _categoryRepository.GetAll() as List<Category>;
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null) {
+                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                if (isAdmin) {
+                    Console.WriteLine("Este admin - home controller index!");
+                    var adminAddNewCategory = new Category {
+                        Id = -1,
+                        Name = "Adauga o categorie noua!"
+                    };
+                    categories?.Add(adminAddNewCategory);
+                }
+            }
+            
+            var model = DataMapper.ModelMapper.ToCategoryHomeItemsViewModel(categories);
+            return View(model);
         }
         
         [Authorize]

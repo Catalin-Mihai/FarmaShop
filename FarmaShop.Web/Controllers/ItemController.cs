@@ -46,7 +46,7 @@ namespace FarmaShop.Web.Controllers
                 }
             }
             
-            var model = DataMapper.ModelMapper.ToCategoryItemsViewModel(items);
+            var model = DataMapper.ModelMapper.ToItemsViewModel(items);
             return View(model);
         }
     }
