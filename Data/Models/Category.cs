@@ -10,7 +10,7 @@ namespace FarmaShop.Data.Models
         
         public string Description { get; set; }
 
-        public string ImageUrl { get; set; }
+        public byte[] Image { get; set; }
         
         public virtual IEnumerable<Item> Items { get; set; }
     }

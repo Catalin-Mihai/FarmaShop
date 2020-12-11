@@ -38,10 +38,17 @@ namespace FarmaShop.Web.DataMapper
 
         public static CategoryModel ToCategoryModel(Category category)
         {
-            return new CategoryModel {
+            var categoryModel = new CategoryModel {
                 Id = category.Id,
-                Name = category.Name
+                Name = category.Name,
+                ImageUrl = null
             };
+
+            if (category.Image != null) {
+                categoryModel.ImageUrl = Convert.ToBase64String(category.Image);
+            }
+
+            return categoryModel;
         }
 
         public static ItemsViewModel ToCategoryItemsViewModel(IEnumerable<Item> items)
