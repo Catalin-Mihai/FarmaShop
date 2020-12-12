@@ -3,6 +3,7 @@ using FarmaShop.Data.DAL;
 using FarmaShop.Data.Models;
 using FarmaShop.Data.Repositories;
 using FarmaShop.Data.Seeds;
+using FarmaShop.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -65,11 +66,21 @@ namespace FarmaShop.Web
             }
 
             app.UseHttpsRedirection();
+            
+            // allow the frontend to call with more HTTP methods
+            //https://khalidabuhakmeh.com/more-http-methods-aspnet-core-html-forms
+            //Needed to override a form method
+            //@Html.HttpMethodOverride(HttpVerbs.Put) not supported in NET. Core
+            app.UseHttpMethodOverride(new HttpMethodOverrideOptions
+            {
+                FormFieldName = 
+                    HtmlHelperExtensions.HttpMethodOverrideFormName
+            });
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            //Integrated DI
+            //Integrated DI, no need to register dependencies in service.
             app.UseAuthentication();
             
             app.UseAuthorization();
