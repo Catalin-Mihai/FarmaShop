@@ -55,5 +55,35 @@ namespace FarmaShop.Web.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        async public Task<IActionResult> Edit(int categoryId)
+        {
+            var categoryDbModel = await _categoryRepository.GetById(categoryId);
+            var categoryEditModel = DataMapper.ModelMapper.ToCategoryUpdateModel(categoryDbModel);
+            Console.WriteLine("A plecat cu id: " + categoryEditModel.Id);
+            return View(categoryEditModel);
+        }
+        
+        [HttpPut]
+        async public Task<IActionResult> Update(CategoryUpdateModel categoryUpdateModel)
+        {
+            Console.WriteLine("AM intrat pe update");
+            Console.WriteLine("Id: " + categoryUpdateModel.Id);
+            Console.WriteLine("Name: " + categoryUpdateModel.Name);
+            Console.WriteLine("Descriere: " + categoryUpdateModel.Description);
+            Console.WriteLine("Image bytes: " + categoryUpdateModel.NewImage?.Length);
+            if (ModelState.IsValid) {
+                Console.WriteLine("Model valid!");
+                var dbModel = DataMapper.ModelMapper.ToCategoryDbModel(categoryUpdateModel);
+                _categoryRepository.Update(dbModel);
+                await _categoryRepository.SaveChangesAsync();
+            }
+            else {
+                Console.WriteLine("Model invalid!");
+                return View("Edit", categoryUpdateModel);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

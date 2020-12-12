@@ -1,0 +1,41 @@
+﻿@using FarmaShop.Web.Extensions
+@using System.Net.Http
+@model FarmaShop.Web.Models.Category.CategoryUpdateModel
+
+<h2>New</h2>
+@using (Html.BeginForm(actionName: "Update", controllerName: "Category", method: FormMethod.Post, new { enctype="multipart/form-data"}))
+{
+    @Html.HttpMethodOverride(HttpMethod.Put)
+    @Html.HiddenFor(b => b.Id)
+    @Html.Label("Name", "Numele categoriei:")
+    <br />
+    @Html.TextBoxFor(c => c.Name, null, new { placeholder = "Introduceti numele categoriei", @class = "formcontrol" })
+    @Html.ValidationMessageFor(c => c.Name, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Description", "Descriere:")
+    <br />
+    @Html.TextBoxFor(b => b.Description, null, new { placeholder = "Introduceti descrierea categoriei", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Description, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Image", "Imagine:")
+    <br />
+@*     <input type="file" name="Image" itemid="Image" placeholder="Incarcari imaginea categoriei" *@
+@*            data-val-required="The image field is required"> *@
+    @Html.HiddenFor(b => b.OldImageUrl)
+    <div>
+        <p>Imaginea veche: </p>
+        @{
+            var image = "favicon.ico";
+            if (Model.OldImageUrl != null)
+            {
+                image = Model.OldImageUrl;
+            }
+        }
+        <img src="@image" alt="Old image">
+    </div>
+    <input asp-for="NewImage" accept="image/*" />
+@*     <span asp-validation-for="Image" class="text-danger"></span> *@
+    @Html.ValidationMessageFor(b => b.NewImage, "", new { @class = "text-danger" })
+    <br />
+    <button class="btn btn-primary" type="submit">Edit</button>
+}

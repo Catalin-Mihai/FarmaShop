@@ -155,12 +155,16 @@
         <e p="DataMapper" t="Include">
           <e p="ModelMapper.cs" t="Include" />
         </e>
+        <e p="extensions" t="Include">
+          <e p="HtmlHelperExtensions.cs" t="Include" />
+        </e>
         <e p="libman.json" t="Include" />
         <e p="Models" t="Include">
           <e p="Category" t="Include">
             <e p="CategoryHomeItemModel.cs" t="Include" />
             <e p="CategoryMenuItemModel.cs" t="Include" />
             <e p="CategoryNewModel.cs" t="Include" />
+            <e p="CategoryUpdateModel.cs" t="Include" />
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Item" t="Include">
@@ -200,6 +204,7 @@
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Category" t="Include">
+            <e p="Edit.cshtml" t="Include" />
             <e p="New.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
