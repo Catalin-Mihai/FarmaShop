@@ -15,6 +15,15 @@ namespace FarmaShop.Web.DataMapper
 {
     public static class ModelMapper
     {
+        #region Util
+
+        public static string ToBase64String(byte[] image)
+        {
+            return "data:image/png;base64, " + Convert.ToBase64String(image);
+        }
+
+        #endregion
+        
         #region Items
         public static ItemModel ToItemModel(Item item)
         {
@@ -35,7 +44,7 @@ namespace FarmaShop.Web.DataMapper
             }
 
             if (item.Image != null)
-                itemModel.ImageUrl = Convert.ToBase64String(item.Image);
+                itemModel.ImageUrl = ToBase64String(item.Image);
             
             return itemModel;
         }
@@ -87,7 +96,7 @@ namespace FarmaShop.Web.DataMapper
                 };
 
                 if (category.Image != null) {
-                    categoryHomeItemModel.ImageUrl = Convert.ToBase64String(category.Image);
+                    categoryHomeItemModel.ImageUrl = ToBase64String(category.Image);
                 }
                 
                 return categoryHomeItemModel;

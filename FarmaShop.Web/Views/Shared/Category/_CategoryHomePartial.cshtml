@@ -5,10 +5,10 @@
 <div class="card m-5" style="width: 12rem;">
     <div class="card-body">
         @{
-            var image = Model.ImageUrl; //default image
+            var image = "favicon.ico"; //default image
             if (Model.ImageUrl != null)
             {
-                image = "favicon.ico";
+                image = Model.ImageUrl;
             }
         }
         <img class="card-img-top m-2" src="@image"
