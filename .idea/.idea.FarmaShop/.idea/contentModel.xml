@@ -155,6 +155,7 @@
         <e p="DataMapper" t="Include">
           <e p="ModelMapper.cs" t="Include" />
         </e>
+        <e p="libman.json" t="Include" />
         <e p="Models" t="Include">
           <e p="Category" t="Include">
             <e p="CategoryHomeItemModel.cs" t="Include" />
@@ -168,7 +169,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netcoreapp5.0" t="Include">
+            <e p="net5.0" t="Include">
               <e p="Web.AssemblyInfo.cs" t="Include" />
               <e p="Web.RazorAssemblyInfo.cs" t="Include" />
             </e>
@@ -263,6 +264,62 @@
                 </e>
               </e>
               <e p="LICENSE" t="Include" />
+            </e>
+            <e p="font-awesome" t="Include">
+              <e p="css" t="Include">
+                <e p="all.css" t="Include" />
+                <e p="all.min.css" t="Include" />
+                <e p="brands.css" t="Include" />
+                <e p="brands.min.css" t="Include" />
+                <e p="fontawesome.css" t="Include" />
+                <e p="fontawesome.min.css" t="Include" />
+                <e p="regular.css" t="Include" />
+                <e p="regular.min.css" t="Include" />
+                <e p="solid.css" t="Include" />
+                <e p="solid.min.css" t="Include" />
+                <e p="svg-with-js.css" t="Include" />
+                <e p="svg-with-js.min.css" t="Include" />
+                <e p="v4-shims.css" t="Include" />
+                <e p="v4-shims.min.css" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="all.js" t="Include" />
+                <e p="all.min.js" t="Include" />
+                <e p="brands.js" t="Include" />
+                <e p="brands.min.js" t="Include" />
+                <e p="conflict-detection.js" t="Include" />
+                <e p="conflict-detection.min.js" t="Include" />
+                <e p="fontawesome.js" t="Include" />
+                <e p="fontawesome.min.js" t="Include" />
+                <e p="regular.js" t="Include" />
+                <e p="regular.min.js" t="Include" />
+                <e p="solid.js" t="Include" />
+                <e p="solid.min.js" t="Include" />
+                <e p="v4-shims.js" t="Include" />
+                <e p="v4-shims.min.js" t="Include" />
+              </e>
+              <e p="sprites" t="Include">
+                <e p="brands.svg" t="Include" />
+                <e p="regular.svg" t="Include" />
+                <e p="solid.svg" t="Include" />
+              </e>
+              <e p="webfonts" t="Include">
+                <e p="fa-brands-400.eot" t="Include" />
+                <e p="fa-brands-400.svg" t="Include" />
+                <e p="fa-brands-400.ttf" t="Include" />
+                <e p="fa-brands-400.woff" t="Include" />
+                <e p="fa-brands-400.woff2" t="Include" />
+                <e p="fa-regular-400.eot" t="Include" />
+                <e p="fa-regular-400.svg" t="Include" />
+                <e p="fa-regular-400.ttf" t="Include" />
+                <e p="fa-regular-400.woff" t="Include" />
+                <e p="fa-regular-400.woff2" t="Include" />
+                <e p="fa-solid-900.eot" t="Include" />
+                <e p="fa-solid-900.svg" t="Include" />
+                <e p="fa-solid-900.ttf" t="Include" />
+                <e p="fa-solid-900.woff" t="Include" />
+                <e p="fa-solid-900.woff2" t="Include" />
+              </e>
             </e>
             <e p="jquery" t="Include">
               <e p="dist" t="Include">
