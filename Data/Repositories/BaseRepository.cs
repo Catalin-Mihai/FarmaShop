@@ -89,5 +89,10 @@ namespace FarmaShop.Data.Repositories
             // _dbSet.Attach(entityToUpdate); //Not needed?
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }

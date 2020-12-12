@@ -1,9 +1,18 @@
 ﻿@using FarmaShop.Web.Models.Category
+@using FarmaShop.Data.Models
 @model CategoryHomeItemModel
 
 <div class="card m-5" style="width: 12rem;">
     <div class="card-body">
-        <img class="card-img-top m-2" src="favicon.ico" alt="@Model.Name Image">
+        @{
+            var image = Model.ImageUrl; //default image
+            if (Model.ImageUrl != null)
+            {
+                image = "favicon.ico";
+            }
+        }
+        <img class="card-img-top m-2" src="@image"
+             alt="@Model.Name Image" onclick="location.href='@Url.Action("Items", "Category", new {categoryId = Model.Id})'">
         <h5 class="card-title">@Model.Name</h5>
     </div>
 </div>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Reflection;
 using FarmaShop.Data.Models;
 using FarmaShop.Web.Models.Category;
@@ -98,6 +100,26 @@ namespace FarmaShop.Web.DataMapper
                 };
             }
             
+            #endregion
+
+            #region NewModel
+
+            public static Category ToCategoryDbModel(CategoryNewModel newModel)
+            {
+                var dbModel = new Category {
+                    Name = newModel.Name,
+                    Description = newModel.Description,
+                };
+                
+                using (var ms = new MemoryStream())
+                {
+                    newModel.Image.CopyTo(ms);
+                    dbModel.Image = ms.ToArray();
+                }
+
+                return dbModel;
+            }
+
             #endregion
 
         #endregion

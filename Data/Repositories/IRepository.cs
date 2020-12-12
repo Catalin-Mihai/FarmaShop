@@ -21,5 +21,7 @@ namespace FarmaShop.Data.Repositories
             Expression<Func<TEntity, bool>> filter = null, 
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, 
             string includeProperties = ""); // Might be very useful for dynamic filtering, ordering etc... 
+
+        Task SaveChangesAsync();
     }
 }
