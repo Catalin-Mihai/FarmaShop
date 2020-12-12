@@ -24,11 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="Start the initial database population">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Web.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,6 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryDropDownModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryMenuItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/Items.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Items.cshtml.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryViewModel.cs" />
@@ -121,9 +118,10 @@
         <option value="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" />
         <option value="$PROJECT_DIR$/Data/Repositories/IRepository.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
       </list>
     </option>
   </component>
@@ -231,7 +229,7 @@
       <workItem from="1607185845726" duration="13791000" />
       <workItem from="1607600081616" duration="14499000" />
       <workItem from="1607688433364" duration="11587000" />
-      <workItem from="1607781794252" duration="5721000" />
+      <workItem from="1607781794252" duration="6735000" />
     </task>
     <task id="LOCAL-00001" summary="Add .gitignore file">
       <created>1606939579378</created>
@@ -443,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607786156402</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add font awesome dependency for cool icons.">
+      <created>1607787669778</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607787669778</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +491,8 @@
     <MESSAGE value="- Reformat ViewModels to better match their scope.&#10;- Display categories to the home page." />
     <MESSAGE value="Add category creation feature (with forms) for admins." />
     <MESSAGE value="Base64 conversion fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base64 conversion fixes" />
+    <MESSAGE value="Add font awesome dependency for cool icons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add font awesome dependency for cool icons." />
   </component>
   <component name="WindowStateProjectService">
     <state x="298" y="66" width="814" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605891044661">
@@ -501,22 +507,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607186207505" />
-    <state width="1493" height="252" key="GridCell.Tab.0.bottom" timestamp="1607786869286">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom" timestamp="1607788652681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607786869286" />
-    <state width="1493" height="252" key="GridCell.Tab.0.center" timestamp="1607786869286">
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607788652681" />
+    <state width="1493" height="192" key="GridCell.Tab.0.center" timestamp="1607788652681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607786869286" />
-    <state width="1493" height="252" key="GridCell.Tab.0.left" timestamp="1607786869286">
+    <state width="1493" height="192" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607788652681" />
+    <state width="1493" height="192" key="GridCell.Tab.0.left" timestamp="1607788652681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607786869286" />
-    <state width="1493" height="252" key="GridCell.Tab.0.right" timestamp="1607786869286">
+    <state width="1493" height="192" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607788652681" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right" timestamp="1607788652681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607786869286" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607788652681" />
     <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1607785226521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

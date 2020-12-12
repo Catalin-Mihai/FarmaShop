@@ -1,5 +1,4 @@
 ﻿@using FarmaShop.Web.Models.Category
-@using FarmaShop.Data.Models
 @model CategoryHomeItemModel
 
 <div class="card m-5" style="width: 12rem;">
@@ -15,4 +14,14 @@
              alt="@Model.Name Image" onclick="location.href='@Url.Action("Items", "Category", new {categoryId = Model.Id})'">
         <h5 class="card-title">@Model.Name</h5>
     </div>
+    @if (User.IsInRole("Admin") && Model.Id != -1)
+    {
+        <div class="card-footer">
+            <div class="text-center">
+                <i class="fas fa-edit fa-2x" onclick="location.href='@Url.Action("Items", "Category", new {categoryId = Model.Id})'"></i>
+                <i class="fas fa-trash fa-2x" onclick="location.href='@Url.Action("Items", "Category", new {categoryId = Model.Id})'"></i>
+            </div>
+            <div class="text-center text-muted">Optiuni administrator</div>
+        </div> 
+    }
 </div>
