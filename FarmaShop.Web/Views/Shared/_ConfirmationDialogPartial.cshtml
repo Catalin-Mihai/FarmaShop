@@ -1,0 +1,64 @@
+﻿@using System.Net
+@model FarmaShop.Web.ViewModels.ConfirmationDialogViewModel
+
+@* HTML Code for bootstrap dialog*@
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Model.DialogMessage
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">@Model.DismissButton</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="DoAcceptAction()">@Model.ConfirmButton</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>    
+    //Arguments (keys) received in the model
+    let received_args = @Json.Serialize(Model.Parameters);
+    
+    //Data dictionary used in the ajax.
+    //Build by pairing received arguments on the model + variable arguments from the function call.
+    let arg_dict = {};
+    
+    function ShowConfirmDialog() {
+        console.log(arguments);
+        for(let i = 0; i < arguments.length; i++)
+        {
+            console.log("Arg: " + arguments[i]);
+            arg_dict[received_args[i]] = arguments[i];
+        }
+    }
+    function DoAcceptAction(){
+        console.log(@Json.Serialize(Model.Parameters));
+        $.ajax({
+            type: "@Model.AjaxMethod",
+            url: '@Model.AjaxUrl',
+            data: arg_dict,
+            success: function (data, textStatus, xhr) {
+                if (xhr.status === 200)
+                {
+                    alert('@Model.SuccesMessage');
+                    window.location = "@Model.RedirectLocation";
+                }
+            },
+            fail: function(xhr, textStatus, errorThrown){
+                   alert('@Model.FailMessage');
+            }
+        })   
+    }
+    
+</script>
