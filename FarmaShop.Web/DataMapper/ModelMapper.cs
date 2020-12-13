@@ -141,8 +141,11 @@ namespace FarmaShop.Web.DataMapper
                     Id = dbModel.Id,
                     Name = dbModel.Name,
                     Description = dbModel.Description,
-                    OldImageUrl = ToBase64String(dbModel.Image)
+                    OldImageUrl = null
                 };
+
+                if (dbModel.Image != null)
+                    updateModel.OldImageUrl = ToBase64String(dbModel.Image);
 
                 return updateModel;
             }
@@ -153,6 +156,7 @@ namespace FarmaShop.Web.DataMapper
                     Id = updateModel.Id,
                     Name = updateModel.Name,
                     Description = updateModel.Description,
+                    Image = null
                 };
 
                 if (updateModel.NewImage != null) {
@@ -162,7 +166,8 @@ namespace FarmaShop.Web.DataMapper
                         dbModel.Image = ms.ToArray();
                     }
                 }
-                else {
+                
+                if(updateModel.OldImageUrl != null){
                     dbModel.Image = FromBase64String(updateModel.OldImageUrl);
                 }
 

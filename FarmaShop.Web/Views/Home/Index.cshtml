@@ -1,13 +1,34 @@
 ﻿@using FarmaShop.Web.ViewModels.Category
+@using FarmaShop.Web.Extensions
+@using System.Net.Http
+@using FarmaShop.Web.ViewModels
 @model CategoryHomeItemsViewModel
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
 <div class="text-center">
     <h1 class="display-4">Bine ați venit!</h1>
     <p>Alegeti produsele pe care le doriti din urmatoarele categorii</p>
 </div>
+
+@await Html.PartialAsync("_ConfirmationDialogPartial", new ConfirmationDialogViewModel
+{
+    AjaxMethod = "DELETE",
+    AjaxUrl = @Url.Action("Delete", "Category"),
+    ConfirmButton = "Sterge",
+    DismissButton = "Inapoi",
+    DialogMessage = "Vrei sa stergi aceasta categorie?",
+    SuccesMessage = "Categorie stearsa cu succes!",
+    FailMessage = "Ceva nu a mers bine! Este posibil sa nu se fi sters categoria!",
+    RedirectLocation = "Home",
+    Parameters = new[]
+    {
+        "categoryId"
+    }
+})
+
 
 @* Show categories *@
 <div class="d-flex justify-content-center flex-wrap align-items-start">

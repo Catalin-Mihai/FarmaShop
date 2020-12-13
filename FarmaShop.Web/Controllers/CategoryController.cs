@@ -85,5 +85,21 @@ namespace FarmaShop.Web.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpDelete]
+        async public Task<IActionResult> Delete(int categoryId)
+        {
+            Console.WriteLine("A intrat pe delete");
+            Console.WriteLine("Id: " + categoryId);
+            var categoryDb = await _categoryRepository.GetById(categoryId);
+
+            if (categoryDb != null) {
+                _categoryRepository.Delete(categoryDb);
+                await _categoryRepository.SaveChangesAsync();
+                return Ok();
+            }
+
+            return NotFound("altceva");
+        }
     }
 }

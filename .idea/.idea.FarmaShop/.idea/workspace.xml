@@ -24,16 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="Start the initial database population">
-      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/Extensions/HtmlHelperExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryUpdateModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/ViewModels/ConfirmationDialogViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,21 +59,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/5/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Data/Seeds/Seeder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop.Web/Controllers/CategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/11A/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04924406-BACA-48B4-9254-8097E2E1D035/E/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96BF7970-6344-4E2B-8BA1-2DED5D3D6307/1B/ScriptTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Repositories/BaseRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop.Web/Controllers/CategoryController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/38/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D35053D2-E5E7-4729-A8DF-437D4A5E7C1E/9/MvcRazorDiagnosticListenerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Repositories/IRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -80,9 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Data/Repositories/ShoppingCartItemRepository.cs" />
-        <option value="$PROJECT_DIR$/Data/DAL/ApplicationDbContext.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryDropDownModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryMenuItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/Items.cshtml" />
@@ -113,24 +107,27 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryMenuItemsViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Items.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/New.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/New.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Validations/ImageMemorySize.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryNewModel.cs" />
         <option value="$PROJECT_DIR$/Data/Models/Category.cs" />
         <option value="$PROJECT_DIR$/Data/Repositories/IRepository.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Update.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryUpdateModel.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
         <option value="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Extensions/HtmlHelperExtensions.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/BaseViewModel.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/ConfirmationDialogViewModel.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" />
       </list>
     </option>
   </component>
@@ -238,7 +235,11 @@
       <workItem from="1607185845726" duration="13791000" />
       <workItem from="1607600081616" duration="14499000" />
       <workItem from="1607688433364" duration="11587000" />
-      <workItem from="1607781794252" duration="10774000" />
+      <workItem from="1607781794252" duration="10996000" />
+      <workItem from="1607861918915" duration="4576000" />
+      <workItem from="1607873893834" duration="424000" />
+      <workItem from="1607881909993" duration="5474000" />
+      <workItem from="1607887478860" duration="2964000" />
     </task>
     <task id="LOCAL-00001" summary="Add .gitignore file">
       <created>1606939579378</created>
@@ -464,7 +465,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607788825969</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Create an extension to override HTTP Post Verb for forms. &#10;@Html.HttpMethodOverride(HttpVerbs.Put) from NET. Framework MVC is no longer supported in NET. Core.">
+      <created>1607792963535</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607792963535</updated>
+    </task>
+    <task id="LOCAL-00034" summary="More updates for categories editing mode.">
+      <created>1607793024162</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1607793024162</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +524,9 @@
     <MESSAGE value="Base64 conversion fixes" />
     <MESSAGE value="Add font awesome dependency for cool icons." />
     <MESSAGE value="Add edit interface for admins to edit specific categories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add edit interface for admins to edit specific categories." />
+    <MESSAGE value="Create an extension to override HTTP Post Verb for forms. &#10;@Html.HttpMethodOverride(HttpVerbs.Put) from NET. Framework MVC is no longer supported in NET. Core." />
+    <MESSAGE value="More updates for categories editing mode." />
+    <option name="LAST_COMMIT_MESSAGE" value="More updates for categories editing mode." />
   </component>
   <component name="WindowStateProjectService">
     <state x="298" y="66" width="814" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605891044661">
@@ -524,86 +541,86 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607186207505" />
-    <state width="1493" height="240" key="GridCell.Tab.0.bottom" timestamp="1607792720339">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1607890460916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607792720339" />
-    <state width="1493" height="240" key="GridCell.Tab.0.center" timestamp="1607792720339">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1607890460916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607792720339" />
-    <state width="1493" height="240" key="GridCell.Tab.0.left" timestamp="1607792720339">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1607890460916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607792720339" />
-    <state width="1493" height="240" key="GridCell.Tab.0.right" timestamp="1607792720339">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1607890460916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607792720339" />
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1607785226521">
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
+    <state width="1493" height="245" key="GridCell.Tab.1.bottom" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.1.center" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.1.left" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.1.right" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.2.bottom" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.2.center" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.2.center" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.2.left" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.2.left" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.2.right" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.2.right" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.3.bottom" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
-    <state width="1493" height="288" key="GridCell.Tab.3.center" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.3.center" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.3.left" timestamp="1607785226521">
+    <state width="1493" height="245" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.3.left" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1607785226521" />
-    <state width="1493" height="288" key="GridCell.Tab.3.right" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.3.right" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
-    <state width="1493" height="288" key="GridCell.Tab.4.bottom" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.4.bottom" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
-    <state width="1493" height="288" key="GridCell.Tab.4.center" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.4.center" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
-    <state width="1493" height="288" key="GridCell.Tab.4.left" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.4.left" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
-    <state width="1493" height="288" key="GridCell.Tab.4.right" timestamp="1607785226522">
+    <state width="1493" height="245" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
+    <state width="1493" height="245" key="GridCell.Tab.4.right" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1607785226522" />
+    <state width="1493" height="245" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1607887428384" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1605890883059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -628,10 +645,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1607608552124" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607614729662">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607884470814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607614729662" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607884470814" />
     <state x="1063" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607607242415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -640,9 +657,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="450" y="11" width="636" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607614226763" />
-    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607196792596">
+    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607882934368">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607196792596" />
+    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607882934368" />
   </component>
 </project>

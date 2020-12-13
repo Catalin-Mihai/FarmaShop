@@ -25,7 +25,7 @@
     <div>
         <p>Imaginea veche: </p>
         @{
-            var image = "favicon.ico";
+            var image = Url.Content("~/favicon.ico");
             if (Model.OldImageUrl != null)
             {
                 image = Model.OldImageUrl;

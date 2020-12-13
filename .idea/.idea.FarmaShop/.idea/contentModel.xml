@@ -192,10 +192,12 @@
           <e p="ImageMemorySize.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="BaseViewModel.cs" t="Include" />
           <e p="Category" t="Include">
             <e p="CategoryHomeItemsViewModel.cs" t="Include" />
             <e p="CategoryMenuItemsViewModel.cs" t="Include" />
           </e>
+          <e p="ConfirmationDialogViewModel.cs" t="Include" />
           <e p="Item" t="Include">
             <e p="ItemsViewModel.cs" t="Include" />
           </e>
@@ -215,6 +217,7 @@
             <e p="Items.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
+            <e p="_ConfirmationDialogPartial.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ShopMenuPartial.cshtml" t="Include" />
