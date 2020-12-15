@@ -24,18 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a8fbc0-4df9-476c-bb7b-3f8faebd16f9" name="Default Changelist" comment="Start the initial database population">
-      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/ViewModels/ConfirmationDialogViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ShopMenuPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ShopMenuPartial.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryMenuItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/Items.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Items.cshtml.cs" />
@@ -89,14 +82,12 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Item/CategoryItemsViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Item/_ViewItem.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Item/ItemsViewModel.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ShopMenuPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/css/item.css" />
         <option value="$PROJECT_DIR$/Data/Models/Item.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Item/_ItemPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/appsettings.json" />
         <option value="$PROJECT_DIR$/Data/Seeds/Seeder.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Privacy.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/ItemController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryMenuItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoriesHomeViewModel.cs" />
@@ -105,7 +96,6 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryHomeItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryHomeItemsViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Category/CategoryMenuItemsViewModel.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Items.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/New.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/New.cshtml" />
@@ -117,17 +107,21 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryUpdateModel.cs" />
         <option value="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Extensions/HtmlHelperExtensions.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/BaseViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/ConfirmationDialogViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/ItemController.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Index.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ShopMenuPartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" />
       </list>
     </option>
   </component>
@@ -239,7 +233,10 @@
       <workItem from="1607861918915" duration="4576000" />
       <workItem from="1607873893834" duration="424000" />
       <workItem from="1607881909993" duration="5474000" />
-      <workItem from="1607887478860" duration="2964000" />
+      <workItem from="1607887478860" duration="3189000" />
+      <workItem from="1607959769631" duration="856000" />
+      <workItem from="1607974438809" duration="251000" />
+      <workItem from="1608028020103" duration="3176000" />
     </task>
     <task id="LOCAL-00001" summary="Add .gitignore file">
       <created>1606939579378</created>
@@ -479,7 +476,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607793024162</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add a Partial View Component that will dynamically show a custom confirmation dialog. Very useful for deletions.">
+      <created>1607890575856</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1607890575856</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add the ability to delete a category from the home page as admin. Make use of the custom confirmation page to be safe that it is not done by mistake.">
+      <created>1607890640806</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1607890640806</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Minor routes adjustments to match the exact pattern of controllers.">
+      <created>1608031939031</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1608031939031</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,9 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add .gitignore file" />
-    <MESSAGE value="Seed the database with user roles specified in the application settings on startup." />
-    <MESSAGE value="Change the project structure to contain subprojects.&#10;Add Data project to handle the data logic.&#10;Add Web project to handle the web server logic. It will consume the Data project." />
     <MESSAGE value="Add main Database Models" />
     <MESSAGE value="- Add custom User class model inherited from IdentityUser &#10;- Scaffold again the Net Core Identity pages to use the custom user class.&#10;- Add many-to-many relationship between items and categories.&#10;- Add new migrations (V3 latest) to reflect the new database changes." />
     <MESSAGE value="- Add repository pattern to Data project.&#10;- Make a CRUD interface for repositories to be used for easier dependency injection. &#10;- Make a generic base repository that implements the CRUD interface.&#10;- Make separate repositories for each Entity that inherit the base repository (no code duplication purposes)" />
@@ -526,7 +541,10 @@
     <MESSAGE value="Add edit interface for admins to edit specific categories." />
     <MESSAGE value="Create an extension to override HTTP Post Verb for forms. &#10;@Html.HttpMethodOverride(HttpVerbs.Put) from NET. Framework MVC is no longer supported in NET. Core." />
     <MESSAGE value="More updates for categories editing mode." />
-    <option name="LAST_COMMIT_MESSAGE" value="More updates for categories editing mode." />
+    <MESSAGE value="Add a Partial View Component that will dynamically show a custom confirmation dialog. Very useful for deletions." />
+    <MESSAGE value="Add the ability to delete a category from the home page as admin. Make use of the custom confirmation page to be safe that it is not done by mistake." />
+    <MESSAGE value="Minor routes adjustments to match the exact pattern of controllers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor routes adjustments to match the exact pattern of controllers." />
   </component>
   <component name="WindowStateProjectService">
     <state x="298" y="66" width="814" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605891044661">
@@ -541,22 +559,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1607186207505" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1607890460916">
+    <state width="1493" height="228" key="GridCell.Tab.0.bottom" timestamp="1608032344644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1607890460916">
+    <state width="1493" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608032344644" />
+    <state width="1493" height="228" key="GridCell.Tab.0.center" timestamp="1608032344644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1607890460916">
+    <state width="1493" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608032344644" />
+    <state width="1493" height="228" key="GridCell.Tab.0.left" timestamp="1608032344644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1607890460916">
+    <state width="1493" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608032344644" />
+    <state width="1493" height="228" key="GridCell.Tab.0.right" timestamp="1608032344644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607890460916" />
+    <state width="1493" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608032344644" />
     <state width="1493" height="245" key="GridCell.Tab.1.bottom" timestamp="1607887428384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -645,18 +663,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1607608552124" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607884470814">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607890660780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607884470814" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607890660780" />
     <state x="1063" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607607242415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1063" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607607242415" />
-    <state x="450" y="11" width="636" height="801" key="find.popup" timestamp="1607614226763">
+    <state x="450" y="11" width="636" height="801" key="find.popup" timestamp="1608031413372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="450" y="11" width="636" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607614226763" />
+    <state x="450" y="11" width="636" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608031413372" />
     <state x="626" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607882934368">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

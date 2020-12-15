@@ -11,14 +11,14 @@
             }
         }
         <img class="card-img-top m-2" src="@image"
-             alt="@Model.Name Image" onclick="location.href='@Url.Action("Items", "Category", new {categoryId = Model.Id})'">
+             alt="@Model.Name Image" onclick="location.href='@Url.Action("Items", "Category", new {id = Model.Id})'">
         <h5 class="card-title">@Model.Name</h5>
     </div>
     @if (User.IsInRole("Admin") && Model.Id != -1)
     {
         <div class="card-footer">
             <div class="text-center">
-                <i class="fas fa-edit fa-2x" onclick="location.href='@Url.Action("Edit", "Category", new {categoryId = Model.Id})'"></i>
+                <i class="fas fa-edit fa-2x" onclick="location.href='@Url.Action("Edit", "Category", new {id = Model.Id})'"></i>
                 <i class="fas fa-trash fa-2x" data-toggle="modal" data-target="#exampleModalCenter" onclick="ShowConfirmDialog(@Model.Id)"></i>
             </div>
             <div class="text-center text-muted">Optiuni administrator</div>

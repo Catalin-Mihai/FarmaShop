@@ -12,7 +12,7 @@
         @foreach (var category in categories)
         {
             <li>
-                @Html.ActionLink(category.Name, "Items", "Item", new {categoryId = category.Id}, null)
+                @Html.ActionLink(category.Name, "Index", "Item", new {id = category.Id}, null)
             </li>
         }
         <li>

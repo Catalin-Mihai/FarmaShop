@@ -22,12 +22,13 @@ namespace FarmaShop.Web.Controllers
             _userManager = userManager;
         }
 
-        async public Task<IActionResult> Items(int categoryId)
+        // [HttpGet("{categoryId}")]
+        async public Task<IActionResult> Index(int id)
         {
-            Console.WriteLine(categoryId.ToString());
+            Console.WriteLine(id.ToString());
             
             var items = await _itemRepository.Get(
-                it => it.Categories.Select(cat => cat.Id).Contains(categoryId), 
+                it => it.Categories.Select(cat => cat.Id).Contains(id), 
                 includeProperties: "Categories") as List<Item>;
 
             var user = await _userManager.GetUserAsync(User);

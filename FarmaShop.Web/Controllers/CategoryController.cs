@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FarmaShop.Data.Models;
 using FarmaShop.Data.Repositories;
 using FarmaShop.Web.Models.Category;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FarmaShop.Web.Controllers
@@ -10,22 +12,47 @@ namespace FarmaShop.Web.Controllers
     public class CategoryController : Controller
     {
         private readonly IRepository<Category> _categoryRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CategoryController(IRepository<Category> categoryRepository)
+        public CategoryController(IRepository<Category> categoryRepository, UserManager<ApplicationUser> userManager)
         {
             _categoryRepository = categoryRepository;
+            _userManager = userManager;
         }
+        
+        async public Task<IActionResult> Index()
+        {
+            //Send categories
 
-        public IActionResult Items(int categoryId)
+            var categories = await _categoryRepository.GetAll() as List<Category>;
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null) {
+                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                if (isAdmin) {
+                    Console.WriteLine("Este admin - home controller index!");
+                    var adminAddNewCategory = new Category {
+                        Id = -1,
+                        Name = "Adauga o categorie noua!"
+                    };
+                    categories?.Add(adminAddNewCategory);
+                }
+            }
+            
+            var model = DataMapper.ModelMapper.ToCategoryHomeItemsViewModel(categories);
+            return View(model);
+        }
+        
+        public IActionResult Items(int id)
         {
             //Is not the new category item for admins
-            if (categoryId != -1) {
-                Console.WriteLine("A intrat lol: " + categoryId);
-                return RedirectToAction("Items", "Item", new {categoryId = categoryId});
+            if (id != -1) {
+                Console.WriteLine("A intrat lol: " + id);
+                return RedirectToAction("Index", "Item", new {id = id});
             }
             
             //Create new Category
-            Console.WriteLine("Continuare: " + categoryId);
+            Console.WriteLine("Continuare: " + id);
             return RedirectToAction("New");
         }
 
@@ -56,9 +83,9 @@ namespace FarmaShop.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        async public Task<IActionResult> Edit(int categoryId)
+        async public Task<IActionResult> Edit(int id)
         {
-            var categoryDbModel = await _categoryRepository.GetById(categoryId);
+            var categoryDbModel = await _categoryRepository.GetById(id);
             var categoryEditModel = DataMapper.ModelMapper.ToCategoryUpdateModel(categoryDbModel);
             Console.WriteLine("A plecat cu id: " + categoryEditModel.Id);
             return View(categoryEditModel);
@@ -87,11 +114,11 @@ namespace FarmaShop.Web.Controllers
         }
 
         [HttpDelete]
-        async public Task<IActionResult> Delete(int categoryId)
+        async public Task<IActionResult> Delete(int id)
         {
             Console.WriteLine("A intrat pe delete");
-            Console.WriteLine("Id: " + categoryId);
-            var categoryDb = await _categoryRepository.GetById(categoryId);
+            Console.WriteLine("Id: " + id);
+            var categoryDb = await _categoryRepository.GetById(id);
 
             if (categoryDb != null) {
                 _categoryRepository.Delete(categoryDb);
@@ -99,7 +126,7 @@ namespace FarmaShop.Web.Controllers
                 return Ok();
             }
 
-            return NotFound("altceva");
+            return NotFound();
         }
     }
 }

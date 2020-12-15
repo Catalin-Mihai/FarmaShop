@@ -14,43 +14,20 @@ namespace FarmaShop.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IRepository<Category> _categoryRepository;
-        private readonly IRepository<ApplicationUser> _applicationUserrepository;
         private readonly UserManager<ApplicationUser> _userManager;
 
         private const int AdminRoleAdded = 1;
         private const int AlreadyAnAdmin = 2;
 
-        public HomeController(ILogger<HomeController> logger, IRepository<Category> categoryRepository, IRepository<ApplicationUser> applicationUserrepository, UserManager<ApplicationUser> userManager)
+        public HomeController(UserManager<ApplicationUser> userManager)
         {
-            _logger = logger;
-            _categoryRepository = categoryRepository;
-            _applicationUserrepository = applicationUserrepository;
             _userManager = userManager;
         }
 
-        async public Task<IActionResult> Index()
+        public IActionResult Index()
         {
             //Send categories
-
-            var categories = await _categoryRepository.GetAll() as List<Category>;
-
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null) {
-                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-                if (isAdmin) {
-                    Console.WriteLine("Este admin - home controller index!");
-                    var adminAddNewCategory = new Category {
-                        Id = -1,
-                        Name = "Adauga o categorie noua!"
-                    };
-                    categories?.Add(adminAddNewCategory);
-                }
-            }
-            
-            var model = DataMapper.ModelMapper.ToCategoryHomeItemsViewModel(categories);
-            return View(model);
+            return RedirectToAction("Index", "Category");
         }
         
         [Authorize]
