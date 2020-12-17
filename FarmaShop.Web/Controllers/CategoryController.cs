@@ -48,7 +48,7 @@ namespace FarmaShop.Web.Controllers
             //Is not the new category item for admins
             if (id != -1) {
                 Console.WriteLine("A intrat lol: " + id);
-                return RedirectToAction("Index", "Item", new {id = id});
+                return RedirectToAction("ByCategory", "Item", new {id = id});
             }
             
             //Create new Category

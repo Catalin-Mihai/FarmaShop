@@ -1,7 +1,21 @@
 ﻿@model FarmaShop.Web.Models.Item.ItemModel
 
+@{
+    var urlLocation = "location.href='";
+    //new item for admins
+    if (Model.Id == -1)
+    {
+        urlLocation += Url.Action("New", "Item", new {id = Model.Categories.ToList()[0].Id});
+    }
+    else
+    {
+        urlLocation += Url.Action("Index", "Item", new {id = Model.Id});
+    }
+    urlLocation += "'";
+}
+
 <div class="card m-5" style="width: 18rem;">
-    <div class="card-body">
+    <div class="card-body" onclick="@urlLocation" >
         @{
             if (Model.ImageUrl == null)
             {

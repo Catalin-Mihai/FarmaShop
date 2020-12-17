@@ -1,0 +1,64 @@
+﻿@model FarmaShop.Web.Models.Item.ItemNewModel
+
+<h2>New</h2>
+@using (Html.BeginForm(actionName: "Create", controllerName: "Item", method: FormMethod.Post, new { enctype="multipart/form-data"}))
+{
+    @Html.Label("Name", "Numele produsului")
+    <br />
+    @Html.TextBoxFor(c => c.Name, null, new { placeholder = "Introduceti numele produsului", @class = "formcontrol" })
+    @Html.ValidationMessageFor(c => c.Name, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("ShortDescription", "Descrierea scurta a produsului (Cea afisata in meniul de cautare)")
+    <br />
+    @Html.TextBoxFor(b => b.ShortDescription, null, new { placeholder = "Introduceti descrierea scurta a produsului", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.ShortDescription, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("LongDescription", "Descrierea lunga a produsului (Cea afisata in detaliile produsului din pagina specifica)")
+    <br />
+    @Html.TextBoxFor(b => b.LongDescription, null, new { placeholder = "Introduceti descrierea lunga a produsului", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.LongDescription, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("Price", "Pretul produsului in LEI")
+    <br />
+    @Html.TextBoxFor(b => b.Price, null, new { placeholder = "Introduceti pretul produsului in LEI", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Price, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("InStock", "Numarul de produse in stoc")
+    <br />
+    @Html.TextBoxFor(b => b.InStock, null, new { placeholder = "Introduceti numarul de produse in stoc", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.InStock, "", new { @class = "text-danger" })
+    <br /><br />
+          
+          
+    // A new item has a default category (the one from new category was clicked)
+    @Html.HiddenFor(b => b.CategoriesIdsSerialized)
+          
+          
+    <p>TODO: Lista de ales mai multe categorii pentru produs</p>
+    @*@Html.Label("CategoriesIds", "Pretul produsului in LEI")
+    <br />
+    @Html.TextBoxFor(b => b.CategoriesIds, null, new { placeholder = "Introduceti pretul produsului in LEI", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.InStock, "", new { @class = "text-danger" })
+    <br />*@
+    
+    
+    @Html.Label("Image", "Imagine")
+    <br />
+@*     <input type="file" name="Image" itemid="Image" placeholder="Incarcari imaginea categoriei" *@
+@*            data-val-required="The image field is required"> *@
+    <input asp-for="Image" accept="image/*" />
+@*     <span asp-validation-for="Image" class="text-danger"></span> *@
+    @Html.ValidationMessageFor(b => b.Image, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    <button class="btn btn-primary" type="submit">Create</button>
+}

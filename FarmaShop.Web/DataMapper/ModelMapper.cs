@@ -5,11 +5,16 @@ using System.IO;
 using System.Linq;
 using System.Net.Mime;
 using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 using FarmaShop.Data.Models;
+using FarmaShop.Data.Repositories;
 using FarmaShop.Web.Models.Category;
 using FarmaShop.Web.Models.Item;
 using FarmaShop.Web.ViewModels.Category;
 using FarmaShop.Web.ViewModels.Item;
+using Microsoft.AspNetCore.Http;
 
 namespace FarmaShop.Web.DataMapper
 {
@@ -19,13 +24,33 @@ namespace FarmaShop.Web.DataMapper
 
         public static string ToBase64String(byte[] image)
         {
-            return "data:image/png;base64, " + Convert.ToBase64String(image);
+            if(image != null)
+                return "data:image/png;base64, " + Convert.ToBase64String(image);
+            
+            return null;
         }
 
         public static byte[] FromBase64String(string imageUrl)
         {
-            imageUrl = imageUrl.Substring("data:image/png;base64, ".Length);
-            return Convert.FromBase64String(imageUrl);
+            if (imageUrl != null) {
+                imageUrl = imageUrl.Substring("data:image/png;base64, ".Length);
+                return Convert.FromBase64String(imageUrl);
+            }
+
+            return null;
+        }
+
+        public static byte[] FromFileForm(IFormFile formFile)
+        {
+            if (formFile != null) {
+                using (var ms = new MemoryStream())
+                {
+                    formFile.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            }
+
+            return null;
         }
 
         #endregion
@@ -61,6 +86,35 @@ namespace FarmaShop.Web.DataMapper
                 Items = new List<ItemModel>(items.Select(ToItemModel))
             };
         }
+
+        async public static Task<Item> ToItemDbModel(ItemNewModel newModel, IRepository<Category> repository = null)
+        {
+            var dbModel = new Item {
+                Name = newModel.Name,
+                Price = newModel.Price,
+                Image = FromFileForm(newModel.Image),
+                Categories = null,
+                InStock = newModel.InStock,
+                LongDescription = newModel.LongDescription,
+                ShortDescription = newModel.ShortDescription
+            };
+
+            if (repository != null && newModel.CategoriesIdsSerialized != null) {
+
+                //Get the categories from DB
+                dbModel.Categories = new List<Category>();
+                List<int> categoriesIds = JsonSerializer.Deserialize<List<int>>(newModel.CategoriesIdsSerialized);
+                
+                if (categoriesIds != null)
+                    foreach (var categoryId in categoriesIds) {
+                        var category = await repository.GetById(categoryId);
+                        if (category != null)
+                            dbModel.Categories.Add(category); 
+                    }
+            }
+
+            return dbModel;
+        }
         
         #endregion
 
@@ -69,8 +123,6 @@ namespace FarmaShop.Web.DataMapper
             #region MenuItem
 
             
-
-
             public static CategoryMenuItemModel ToCategoryMenuItemModel(Category category)
             {
                 var categoryMenuItemModel = new CategoryMenuItemModel {
@@ -98,13 +150,9 @@ namespace FarmaShop.Web.DataMapper
                 var categoryHomeItemModel = new CategoryHomeItemModel {
                     Id = category.Id,
                     Name = category.Name,
-                    ImageUrl = null
+                    ImageUrl = ToBase64String(category.Image)
                 };
 
-                if (category.Image != null) {
-                    categoryHomeItemModel.ImageUrl = ToBase64String(category.Image);
-                }
-                
                 return categoryHomeItemModel;
             }
             
@@ -124,13 +172,8 @@ namespace FarmaShop.Web.DataMapper
                 var dbModel = new Category {
                     Name = newModel.Name,
                     Description = newModel.Description,
+                    Image = FromFileForm(newModel.Image)
                 };
-                
-                using (var ms = new MemoryStream())
-                {
-                    newModel.Image.CopyTo(ms);
-                    dbModel.Image = ms.ToArray();
-                }
 
                 return dbModel;
             }
@@ -141,12 +184,9 @@ namespace FarmaShop.Web.DataMapper
                     Id = dbModel.Id,
                     Name = dbModel.Name,
                     Description = dbModel.Description,
-                    OldImageUrl = null
+                    OldImageUrl = ToBase64String(dbModel.Image)
                 };
-
-                if (dbModel.Image != null)
-                    updateModel.OldImageUrl = ToBase64String(dbModel.Image);
-
+                
                 return updateModel;
             }
             
@@ -160,11 +200,7 @@ namespace FarmaShop.Web.DataMapper
                 };
 
                 if (updateModel.NewImage != null) {
-                    using (var ms = new MemoryStream())
-                    {
-                        updateModel.NewImage.CopyTo(ms);
-                        dbModel.Image = ms.ToArray();
-                    }
+                    dbModel.Image = FromFileForm(updateModel.NewImage);
                 }
                 
                 if(updateModel.OldImageUrl != null){

@@ -169,6 +169,7 @@
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Item" t="Include">
             <e p="ItemModel.cs" t="Include" />
+            <e p="ItemNewModel.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -213,7 +214,9 @@
             <e p="Privacy.cshtml" t="Include" />
           </e>
           <e p="Item" t="Include">
+            <e p="ByCategory.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
+            <e p="New.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_ConfirmationDialogPartial.cshtml" t="Include" />
