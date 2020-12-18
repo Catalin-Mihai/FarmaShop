@@ -56,13 +56,12 @@ namespace FarmaShop.Web.DataMapper
         #endregion
         
         #region Items
-        public static ItemModel ToItemModel(Item item)
+        public static ItemCategoryModel ToItemCategoryModel(Item item)
         {
-            var itemModel = new ItemModel {
+            var itemModel = new ItemCategoryModel {
                 Id = item.Id,
                 Name = item.Name,
                 ShortDescription = item.ShortDescription,
-                LongDescription = item.LongDescription,
                 Price = item.Price,
                 ImageUrl = null,
                 InStock = item.InStock,
@@ -80,10 +79,10 @@ namespace FarmaShop.Web.DataMapper
             return itemModel;
         }
 
-        public static ItemsViewModel ToItemsViewModel(IEnumerable<Item> items)
+        public static ItemsCategoryViewModel ToItemsViewModel(IEnumerable<Item> items)
         {
-            return new ItemsViewModel {
-                Items = new List<ItemModel>(items.Select(ToItemModel))
+            return new ItemsCategoryViewModel {
+                Items = new List<ItemCategoryModel>(items.Select(ToItemCategoryModel))
             };
         }
 
@@ -114,6 +113,34 @@ namespace FarmaShop.Web.DataMapper
             }
 
             return dbModel;
+        }
+        
+        public static ItemModel ToItemModel(Item item, Category fromCategory)
+        {
+            var itemModel = new ItemModel {
+                Id = item.Id,
+                Name = item.Name,
+                LongDescription = item.LongDescription,
+                Price = item.Price,
+                ImageUrl = null,
+                InStock = item.InStock,
+                FromCategory = null,
+                Categories = null
+            };
+
+            if (fromCategory != null) {
+                itemModel.FromCategory = ToCategoryMenuItemModel(fromCategory);
+            }
+            
+            if (item.Categories != null) {
+                itemModel.Categories = new List<CategoryMenuItemModel>(
+                    item.Categories.Select(ToCategoryMenuItemModel));
+            }
+
+            if (item.Image != null)
+                itemModel.ImageUrl = ToBase64String(item.Image);
+            
+            return itemModel;
         }
         
         #endregion

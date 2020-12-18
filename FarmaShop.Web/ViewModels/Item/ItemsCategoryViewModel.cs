@@ -4,8 +4,8 @@ using FarmaShop.Web.Models.Item;
 
 namespace FarmaShop.Web.ViewModels.Item
 {
-    public class ItemsViewModel
+    public class ItemsCategoryViewModel
     {
-        public List<ItemModel> Items;
+        public List<ItemCategoryModel> Items;
     }
 }

@@ -3,15 +3,13 @@ using FarmaShop.Web.Models.Category;
 
 namespace FarmaShop.Web.Models.Item
 {
-    public class ItemModel
+    public class ItemCategoryModel
     {
         public int Id { get; set; }
         
         public string Name { get; set; }
         
-        public CategoryMenuItemModel FromCategory { get; set; }
-        
-        public string LongDescription { get; set; }
+        public string ShortDescription { get; set; }
 
         public double Price { get; set; }
         

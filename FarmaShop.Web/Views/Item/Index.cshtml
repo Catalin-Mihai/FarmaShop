@@ -1,1 +1,77 @@
-﻿<div>TEAPA</div>
+﻿@model FarmaShop.Web.Models.Item.ItemModel
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/item.css" />
+}
+
+@{
+    Model.ImageUrl ??= "/favicon.ico";
+}
+
+<div class="item mt-3">
+    <a href="@Url.Action("Items", "Category", new {id = Model.FromCategory.Id})">@Model.FromCategory.Name</a>
+    <h1 class="item-name mb-4">
+        @Model.Name
+    </h1>
+    <div class="row item-first-row">
+        <div class="col-sm-8 text-center">
+            <img src="@Model.ImageUrl" class="item-image" alt="item image">
+        </div>
+        <div class="col-sm-4 m-auto">
+            <div class="item-price mb-4">
+                @Model.Price
+                <span class="item-price-currency">Lei</span>
+            </div>
+            
+            @if (Model.InStock > 0 && Model.InStock < 5)
+            {
+                <div class="badge badge-warning item-stock-badge mb-1">
+                    Stoc limitat
+                </div>
+            }
+            else if (Model.InStock == 0)
+            {
+                <div class="badge badge-danger item-stock-badge mb-1">
+                    Stoc epuizat
+                </div>
+            }
+            else
+            {
+                <div class="badge badge-success item-stock-badge mb-1">
+                    In stoc
+                </div>
+            }
+            
+            <button type="button" class="btn btn-primary btn-lg btn-block text-nowrap">
+                <div class="text-left">
+                    <i class="fa fa-cart-plus ml-2 mr-3 fa-lg" aria-hidden="true"></i>
+                    <span class="">Adauga in cos</span>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="row item-second-row flex-wrap">
+        <div class="col-sm-9">
+            <div class="item-description-title mb-2">
+                Descriere
+            </div>
+            <div class="item-description">
+                @Model.LongDescription
+            </div>
+        </div>
+        <div class="col-sm-3 text-center">
+            <div class="item-categories-title">
+                Categories
+            </div>
+            <div class="item-categories mt-2 text-center">
+                @foreach (var category in Model.Categories)
+                {
+                    <div class="badge badge-light item-stock-badge mb-2 d-block">
+                        @category.Name
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

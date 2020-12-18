@@ -1,1 +1,53 @@
-﻿
+﻿.item-image{
+    width: 60%;
+}
+
+.item-first-row{
+}
+
+.item-price{
+    font-size: 3em;
+    color: #ef2809;
+    text-align: center;
+}
+
+.item-price-currency{
+    font-size: 2rem;
+}
+
+.item-stock{
+    text-align: center;
+    color: limegreen;
+}
+
+.item-stock-badge{
+    font-size: 1.1em;
+}
+
+.item-second-row{
+    margin-top: 10vh;
+}
+
+.item-description-title{
+    font-size: 2em;
+}
+
+.item-description{
+    font-size: 1em;
+}
+
+.item-categories-title{
+    font-size: 2em;
+}
+
+.item-categories{
+    width: 60%;
+    margin: auto;
+}
+
+.item{
+    width: 80%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 5rem;
+}

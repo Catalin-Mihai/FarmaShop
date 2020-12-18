@@ -26,11 +26,18 @@ namespace FarmaShop.Web.Controllers
             _userManager = userManager;
             _categoryRepository = categoryRepository;
         }
-        
-        
-        public IActionResult Index(int id)
+
+
+        async public Task<IActionResult> Index(int id, int fromCategory)
         {
-            return View(id);
+            var fromCategoryEntity = await _categoryRepository.GetById(fromCategory);
+
+            var queryRes = await _itemRepository.Get(x => x.Id == id, includeProperties: "Categories");
+            var itemEntity = queryRes.FirstOrDefault();
+            
+            var itemModel = DataMapper.ModelMapper.ToItemModel(itemEntity, fromCategoryEntity);
+
+            return View(itemModel);
         }
         
         

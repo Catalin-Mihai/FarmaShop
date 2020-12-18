@@ -168,6 +168,7 @@
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Item" t="Include">
+            <e p="ItemCategoryModel.cs" t="Include" />
             <e p="ItemModel.cs" t="Include" />
             <e p="ItemNewModel.cs" t="Include" />
           </e>
@@ -199,7 +200,7 @@
           </e>
           <e p="ConfirmationDialogViewModel.cs" t="Include" />
           <e p="Item" t="Include">
-            <e p="ItemsViewModel.cs" t="Include" />
+            <e p="ItemsCategoryViewModel.cs" t="Include" />
           </e>
         </e>
         <e p="Views" t="Include">
@@ -229,6 +230,7 @@
             </e>
             <e p="Error.cshtml" t="Include" />
             <e p="Item" t="Include">
+              <e p="_ItemCategoryPartial.cshtml" t="Include" />
               <e p="_ItemPartial.cshtml" t="Include" />
             </e>
           </e>

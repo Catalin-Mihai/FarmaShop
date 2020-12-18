@@ -21,7 +21,7 @@ namespace FarmaShop.Web.Models.Item
         public double Price { get; set; }
         
         [Required]
-        // [ImageMemorySize(1024, ErrorMessage = "File is too large")]
+        [ImageMemorySize(1024, ErrorMessage = "File is too large")]
         public IFormFile Image { get; set; }
         
         [Required]

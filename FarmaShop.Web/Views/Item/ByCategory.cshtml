@@ -1,10 +1,10 @@
 ﻿@using FarmaShop.Web.ViewModels.Item
-@model ItemsViewModel
+@model ItemsCategoryViewModel
 <div class="d-flex justify-content-center flex-wrap flex-">
     @foreach (var item in Model.Items)
     {
         <div>
-            @await Html.PartialAsync("Item/_ItemPartial", item)
+            @await Html.PartialAsync("Item/_ItemCategoryPartial", item)
         </div>
     }
 </div>
