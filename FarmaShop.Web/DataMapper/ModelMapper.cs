@@ -102,7 +102,7 @@ namespace FarmaShop.Web.DataMapper
 
                 //Get the categories from DB
                 dbModel.Categories = new List<Category>();
-                List<int> categoriesIds = JsonSerializer.Deserialize<List<int>>(newModel.CategoriesIdsSerialized);
+                var categoriesIds = JsonSerializer.Deserialize<List<int>>(newModel.CategoriesIdsSerialized);
                 
                 if (categoriesIds != null)
                     foreach (var categoryId in categoriesIds) {
@@ -141,6 +141,57 @@ namespace FarmaShop.Web.DataMapper
                 itemModel.ImageUrl = ToBase64String(item.Image);
             
             return itemModel;
+        }
+        
+        public static ItemUpdateModel ToItemUpdateModel(Item dbModel)
+        {
+            var updateModel = new ItemUpdateModel {
+                Id = dbModel.Id,
+                Name = dbModel.Name,
+                ShortDescription = dbModel.ShortDescription,
+                LongDescription = dbModel.LongDescription,
+                Price = dbModel.Price,
+                InStock = dbModel.InStock,
+                CategoriesIdsSerialized = 
+                    JsonSerializer.Serialize(dbModel.Categories),
+                OldImageUrl = ToBase64String(dbModel.Image)
+            };
+                
+            return updateModel;
+        }
+
+        async public static Task<Item> ToItemDbModel(ItemUpdateModel updateModel, IRepository<Category> repository = null)
+        {
+            var dbModel = new Item {
+                Id = updateModel.Id,
+                Name = updateModel.Name,
+                Price = updateModel.Price,
+                Image = FromFileForm(updateModel.NewImage),
+                Categories = null,
+                InStock = updateModel.InStock,
+                LongDescription = updateModel.LongDescription,
+                ShortDescription = updateModel.ShortDescription
+            };
+
+            if (dbModel.Image == null) {
+                dbModel.Image = FromBase64String(updateModel.OldImageUrl);
+            }
+
+            if (repository != null && updateModel.CategoriesIdsSerialized != null) {
+
+                //Get the categories from DB
+                dbModel.Categories = new List<Category>();
+                var categoriesIds = JsonSerializer.Deserialize<List<int>>(updateModel.CategoriesIdsSerialized);
+                
+                if (categoriesIds != null)
+                    foreach (var categoryId in categoriesIds) {
+                        var category = await repository.GetById(categoryId);
+                        if (category != null)
+                            dbModel.Categories.Add(category); 
+                    }
+            }
+
+            return dbModel;
         }
         
         #endregion
@@ -204,6 +255,10 @@ namespace FarmaShop.Web.DataMapper
 
                 return dbModel;
             }
+            
+            #endregion
+
+            #region UpdateModel
 
             public static CategoryUpdateModel ToCategoryUpdateModel(Category dbModel)
             {
@@ -223,14 +278,10 @@ namespace FarmaShop.Web.DataMapper
                     Id = updateModel.Id,
                     Name = updateModel.Name,
                     Description = updateModel.Description,
-                    Image = null
+                    Image = FromFileForm(updateModel.NewImage)
                 };
 
-                if (updateModel.NewImage != null) {
-                    dbModel.Image = FromFileForm(updateModel.NewImage);
-                }
-                
-                if(updateModel.OldImageUrl != null){
+                if(dbModel.Image == null){
                     dbModel.Image = FromBase64String(updateModel.OldImageUrl);
                 }
 

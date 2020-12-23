@@ -65,10 +65,6 @@ namespace FarmaShop.Web.Controllers
         [HttpPost]
         async public Task<IActionResult> Create(CategoryNewModel category)
         {
-            Console.WriteLine("AM intrat pe create");
-            Console.WriteLine("Name: " + category.Name);
-            Console.WriteLine("Descriere: " + category.Description);
-            Console.WriteLine("Image bytes: " + category.Image.Length);
             if (ModelState.IsValid) {
                 Console.WriteLine("Model valid!");
                 var dbModel = DataMapper.ModelMapper.ToCategoryDbModel(category);
@@ -94,11 +90,6 @@ namespace FarmaShop.Web.Controllers
         [HttpPut]
         async public Task<IActionResult> Update(CategoryUpdateModel categoryUpdateModel)
         {
-            Console.WriteLine("AM intrat pe update");
-            Console.WriteLine("Id: " + categoryUpdateModel.Id);
-            Console.WriteLine("Name: " + categoryUpdateModel.Name);
-            Console.WriteLine("Descriere: " + categoryUpdateModel.Description);
-            Console.WriteLine("Image bytes: " + categoryUpdateModel.NewImage?.Length);
             if (ModelState.IsValid) {
                 Console.WriteLine("Model valid!");
                 var dbModel = DataMapper.ModelMapper.ToCategoryDbModel(categoryUpdateModel);

@@ -28,7 +28,7 @@
 
 <script>    
     //Arguments (keys) received in the model
-    let received_args = @Json.Serialize(Model.Parameters);
+    let received_args = @Json.Serialize(Model.ControllerParameters);
     
     //Data dictionary used in the ajax.
     //Build by pairing received arguments on the model + variable arguments from the function call.
@@ -43,7 +43,7 @@
         }
     }
     function DoAcceptAction(){
-        console.log(@Json.Serialize(Model.Parameters));
+        console.log(@Json.Serialize(Model.ControllerParameters));
         $.ajax({
             type: "@Model.AjaxMethod",
             url: '@Model.AjaxUrl',

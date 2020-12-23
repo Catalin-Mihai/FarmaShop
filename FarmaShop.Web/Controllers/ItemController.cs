@@ -27,16 +27,20 @@ namespace FarmaShop.Web.Controllers
             _categoryRepository = categoryRepository;
         }
 
-
         async public Task<IActionResult> Index(int id, int fromCategory)
         {
-            var fromCategoryEntity = await _categoryRepository.GetById(fromCategory);
+            var fromCategoryEntity = new Category {
+                Id = -1
+            };
+            
+            if (fromCategory != 0) {
+                fromCategoryEntity = await _categoryRepository.GetById(fromCategory);
+            }
 
             var queryRes = await _itemRepository.Get(x => x.Id == id, includeProperties: "Categories");
             var itemEntity = queryRes.FirstOrDefault();
-            
+        
             var itemModel = DataMapper.ModelMapper.ToItemModel(itemEntity, fromCategoryEntity);
-
             return View(itemModel);
         }
         
@@ -73,38 +77,6 @@ namespace FarmaShop.Web.Controllers
             return View(model);
         }
 
-        /*async public Task<IActionResult> Index(int id)
-        {
-            Console.WriteLine(categoryId.ToString());
-            
-            var items = await _itemRepository.Get(
-                it => it.Categories.Select(cat => cat.Id).Contains(categoryId), 
-                includeProperties: "Categories") as List<Item>;
-
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null) {
-                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-                if (isAdmin) {
-                    Console.WriteLine("Este admin!");
-                    var adminAddNewItem = new Item {
-                        Id = -1,
-                        Name = "Adauga un produs nou!",
-                        ShortDescription = "Aceasta optiune este disponibila doar administratorilor.",
-                        Price = 0,
-                        Categories = new List<Category>(),
-                        InStock = -1
-                    };
-                    adminAddNewItem.Categories.Add(
-                        await _categoryRepository.GetById(categoryId) //To know to which category the new item belongs 
-                    );
-                    items?.Add(adminAddNewItem);
-                }
-            }
-            
-            var model = DataMapper.ModelMapper.ToItemsViewModel(items);
-            return View(model);
-        }*/
-
         public IActionResult New(int id)
         {
             //Populate the new item category with the category id received
@@ -133,6 +105,48 @@ namespace FarmaShop.Web.Controllers
             }
 
             return RedirectToAction("Index", "Home");
+        }
+        
+        
+        async public Task<IActionResult> Edit(int id)
+        {
+            var itemDbModel = await _itemRepository.GetById(id);
+            var itemEditModel = DataMapper.ModelMapper.ToItemUpdateModel(itemDbModel);
+            Console.WriteLine("A plecat cu id: " + itemEditModel.Id);
+            return View(itemEditModel);
+        }
+        
+        [HttpPut]
+        async public Task<IActionResult> Update(ItemUpdateModel categoryUpdateModel)
+        {
+            if (ModelState.IsValid) {
+                Console.WriteLine("Model valid!");
+                var dbModel = await DataMapper.ModelMapper.ToItemDbModel(categoryUpdateModel);
+                _itemRepository.Update(dbModel);
+                await _categoryRepository.SaveChangesAsync();
+            }
+            else {
+                Console.WriteLine("Model invalid!");
+                return View("Edit", categoryUpdateModel);
+            }
+
+            return RedirectToAction("Index", "Item", new {id = categoryUpdateModel.Id});
+        }
+        
+        [HttpDelete]
+        async public Task<IActionResult> Delete(int id)
+        {
+            Console.WriteLine("A intrat pe delete");
+            Console.WriteLine("Id: " + id);
+            var itemDb = await _itemRepository.GetById(id);
+
+            if (itemDb != null) {
+                _itemRepository.Delete(itemDb);
+                await _itemRepository.SaveChangesAsync();
+                return Ok();
+            }
+
+            return NotFound();
         }
     }
 }

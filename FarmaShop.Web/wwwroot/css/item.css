@@ -34,6 +34,7 @@
 
 .item-description{
     font-size: 1em;
+    word-wrap: break-word;
 }
 
 .item-categories-title{

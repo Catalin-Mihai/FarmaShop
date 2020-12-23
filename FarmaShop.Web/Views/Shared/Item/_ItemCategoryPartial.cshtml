@@ -1,9 +1,9 @@
-﻿@model FarmaShop.Web.Models.Item.ItemCategoryModel
+﻿@using FarmaShop.Web.Util
+@model FarmaShop.Web.Models.Item.ItemCategoryModel
 
 @{
     // The category of the displayed item
-    var path = Context.Request.Path.ToString().Split("/");
-    var categoryId = int.Parse(path[path.Length - 1]);
+    var categoryId = Util.GetCategoryIdFromUrl(Context.Request.Path.ToString());
 
     var urlLocation = "location.href='";
     //new item for admins
@@ -39,5 +39,15 @@
         <div class="card-footer text-warning text-center">
             Stoc epuizat
         </div>
+    }
+    @if (User.IsInRole("Admin") && Model.Id != -1)
+    {
+        <div class="card-footer">
+            <div class="text-center">
+                <i class="fas fa-edit fa-2x" onclick="location.href='@Url.Action("Edit", "Item", new {id = Model.Id})'"></i>
+                <i class="fas fa-trash fa-2x" data-toggle="modal" data-target="#exampleModalCenter" onclick="ShowConfirmDialog(@Model.Id)"></i>
+            </div>
+            <div class="text-center text-muted">Optiuni administrator</div>
+        </div> 
     }
 </div>

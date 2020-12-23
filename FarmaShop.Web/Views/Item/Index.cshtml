@@ -1,4 +1,5 @@
-﻿@model FarmaShop.Web.Models.Item.ItemModel
+﻿@using FarmaShop.Web.ViewModels
+@model FarmaShop.Web.Models.Item.ItemModel
 
 @section Styles
 {
@@ -10,7 +11,10 @@
 }
 
 <div class="item mt-3">
-    <a href="@Url.Action("Items", "Category", new {id = Model.FromCategory.Id})">@Model.FromCategory.Name</a>
+    @if (Model.FromCategory.Id != -1)
+    {
+        <a href="@Url.Action("Items", "Category", new {id = Model.FromCategory.Id})">@Model.FromCategory.Name</a>
+    }
     <h1 class="item-name mb-4">
         @Model.Name
     </h1>
@@ -23,7 +27,7 @@
                 @Model.Price
                 <span class="item-price-currency">Lei</span>
             </div>
-            
+
             @if (Model.InStock > 0 && Model.InStock < 5)
             {
                 <div class="badge badge-warning item-stock-badge mb-1">
@@ -42,7 +46,7 @@
                     In stoc
                 </div>
             }
-            
+
             <button type="button" class="btn btn-primary btn-lg btn-block text-nowrap">
                 <div class="text-left">
                     <i class="fa fa-cart-plus ml-2 mr-3 fa-lg" aria-hidden="true"></i>

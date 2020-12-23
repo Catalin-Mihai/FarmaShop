@@ -11,7 +11,7 @@
 
         public string RedirectLocation { set; get; }
         
-        public string[] Parameters { get; set; }
+        public string[] ControllerParameters { get; set; }
         
         public string SuccesMessage { set; get; }
         

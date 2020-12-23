@@ -1,4 +1,6 @@
 ﻿@using FarmaShop.Web.ViewModels.Item
+@using FarmaShop.Web.Util
+@using FarmaShop.Web.ViewModels
 @model ItemsCategoryViewModel
 <div class="d-flex justify-content-center flex-wrap flex-">
     @foreach (var item in Model.Items)
@@ -8,3 +10,28 @@
         </div>
     }
 </div>
+
+@{
+    var redirectLocation = "Home";
+    var categoryId = Util.GetCategoryIdFromUrl(Context.Request.Path.ToString());
+    if (categoryId != -1)
+    {
+        redirectLocation = categoryId.ToString();
+    }
+}
+
+@await Html.PartialAsync("_ConfirmationDialogPartial", new ConfirmationDialogViewModel
+{
+    AjaxMethod = "DELETE",
+    AjaxUrl = @Url.Action("Delete", "Item"),
+    ConfirmButton = "Sterge",
+    DismissButton = "Inapoi",
+    DialogMessage = "Esti sigur ca vrei sa stergi aceast produs?",
+    SuccesMessage = "Produs sters cu succes!",
+    FailMessage = "Ceva nu a mers bine! Este posibil sa nu se fi sters produsul!",
+    RedirectLocation = redirectLocation,
+    ControllerParameters = new[]
+    {
+        "id"
+    }
+})
