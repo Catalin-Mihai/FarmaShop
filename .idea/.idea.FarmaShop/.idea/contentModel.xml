@@ -28,6 +28,10 @@
           <e p="20201210131004_FarmaShop-V5.Designer.cs" t="Include" />
           <e p="20201211123129_FarmaShop-V6.cs" t="Include" />
           <e p="20201211123129_FarmaShop-V6.Designer.cs" t="Include" />
+          <e p="20201223154314_FarmaShop-V7.cs" t="Include" />
+          <e p="20201223154314_FarmaShop-V7.Designer.cs" t="Include" />
+          <e p="20201223154810_FarmaShop-V8.cs" t="Include" />
+          <e p="20201223154810_FarmaShop-V8.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -36,7 +40,6 @@
           <e p="Item.cs" t="Include" />
           <e p="Order.cs" t="Include" />
           <e p="OrderDetail.cs" t="Include" />
-          <e p="ShoppingCart.cs" t="Include" />
           <e p="ShoppingCartItem.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -54,7 +57,6 @@
           <e p="OrderDetailRepository.cs" t="Include" />
           <e p="OrderRepository.cs" t="Include" />
           <e p="ShoppingCartItemRepository.cs" t="Include" />
-          <e p="ShoppingCartRepository.cs" t="Include" />
         </e>
         <e p="Seeds" t="Include">
           <e p="Seeder.cs" t="Include" />
@@ -148,6 +150,7 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="CartController.cs" t="Include" />
           <e p="CategoryController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
           <e p="ItemController.cs" t="Include" />
@@ -160,6 +163,9 @@
         </e>
         <e p="libman.json" t="Include" />
         <e p="Models" t="Include">
+          <e p="Cart" t="Include">
+            <e p="CartItemModel.cs" t="Include" />
+          </e>
           <e p="Category" t="Include">
             <e p="CategoryHomeItemModel.cs" t="Include" />
             <e p="CategoryMenuItemModel.cs" t="Include" />
@@ -198,6 +204,9 @@
           <e p="ImageMemorySize.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="Cart" t="Include">
+            <e p="CartViewModel.cs" t="Include" />
+          </e>
           <e p="Category" t="Include">
             <e p="CategoryHomeItemsViewModel.cs" t="Include" />
             <e p="CategoryMenuItemsViewModel.cs" t="Include" />
@@ -210,6 +219,9 @@
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Cart" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
           <e p="Category" t="Include">
             <e p="Edit.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
@@ -230,6 +242,9 @@
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ShopMenuPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Cart" t="Include">
+              <e p="_CartItemPartial.cshtml" t="Include" />
+            </e>
             <e p="Category" t="Include">
               <e p="_CategoryHomePartial.cshtml" t="Include" />
             </e>
@@ -242,12 +257,14 @@
         <e p="Web.csproj" t="IncludeRecursive" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="cart.css" t="Include" />
             <e p="item.css" t="Include" />
             <e p="sidebar.css" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="js" t="Include">
+            <e p="popper.js" t="Include" />
             <e p="sidebar.js" t="Include" />
             <e p="site.js" t="Include" />
           </e>

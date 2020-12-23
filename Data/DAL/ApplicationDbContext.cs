@@ -44,7 +44,5 @@ namespace FarmaShop.Data.DAL
         public DbSet<Order> Orders { get; set; }
         
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        
-        //public DbSet<ItemCategory> ItemCategories { get; set; } //Might be optional. Can be retrieved from Items or Categories tables. 
     }
 }
