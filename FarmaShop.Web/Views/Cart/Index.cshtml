@@ -1,0 +1,111 @@
+﻿@using FarmaShop.Data.Models
+@model FarmaShop.Web.ViewModels.Cart.CartViewModel
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/cart.css" />
+}
+
+<div class="container">
+    @if (Model.Items != null)
+    {
+        <h2 class="mb-3">Produsele tale</h2>
+        <div class="row mt-4">
+            <div id="cart-content" class="col-8">
+                @foreach (var itemModel in Model.Items)
+                {
+                    <div>
+                        @await Html.PartialAsync("Cart/_CartItemPartial", itemModel)
+                    </div>
+                }
+            </div>
+            <div class="col-4" style="background-color: red;">
+                sada
+            </div>
+        </div>
+    }
+    else
+    {
+        <h1>Nu ai produse in cos!</h1>
+    }
+
+</div>
+
+<script>
+
+    let models = @Json.Serialize(Model.Items);
+    console.log(models);
+
+    function getModelById(id)
+    {
+        for (let i = 0; i < models.length; i++)
+        {
+            // console.log("i = " + i);
+            // console.log(models[i]);
+            if (models[i].id === id)
+            {
+                return models[i];
+            }
+        }
+        return null;
+    }
+    
+    function updateCartItemPrice(id, price)
+    {
+        let parentCard = $("#card-" + id);
+        let priceElement = parentCard.find("#item-price");
+        console.log(id + price)
+        priceElement.text(price);
+    }
+    
+    $( document ).ready(function() {
+        for (let i = 0; i < models.length; i++)
+        {
+            updateCartItemPrice(models[i].id, models[i].amount*models[i].item.price);
+        }
+    });
+    
+    let amount = 0;
+    $('.dropdown-item').on('click', function(){
+
+        let parentCard = $(this).parent().closest('.card');
+        let parentCardId = parentCard.attr('id').replace("card-", "");
+        // console.log("parentCardId: " + parentCardId);
+
+        let dropDownButton = parentCard.find('#dropdownMenuButton');
+
+        // Update button text
+        dropDownButton.html($(this).text());
+
+        amount = parseInt($(this).text());
+
+        // Get model by id
+        // the parentCardId is in the following format 'card-id'
+        let updateModel = getModelById(parseInt(parentCardId));
+        
+        //Update model values
+        updateModel.amount = amount;
+        // console.log("updateModel: " + JSON.stringify(updateModel));
+        
+        
+        $.ajax({
+            type: 'PUT',
+            url: '@Url.Action("Update", "Cart")',
+            data: 
+                updateModel, //CartItemModel
+            success: function (data, textStatus, xhr) {
+                 if (xhr.status === 200)
+                 {
+                     updateCartItemPrice(parentCardId, data);
+                 }
+            },
+            fail: function() {
+                alert( "Ceva nu a mers corect!" );
+            }
+        });
+
+        let priceSpan = parentCard.find('#item-price');
+        
+
+    });
+</script>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Net.Mime;
@@ -10,8 +11,10 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using FarmaShop.Data.Models;
 using FarmaShop.Data.Repositories;
+using FarmaShop.Web.Models.Cart;
 using FarmaShop.Web.Models.Category;
 using FarmaShop.Web.Models.Item;
+using FarmaShop.Web.ViewModels.Cart;
 using FarmaShop.Web.ViewModels.Category;
 using FarmaShop.Web.ViewModels.Item;
 using Microsoft.AspNetCore.Http;
@@ -79,6 +82,38 @@ namespace FarmaShop.Web.DataMapper
             return itemModel;
         }
 
+        
+        public static ItemCartModel ToItemCartModel(Item item)
+        {
+            var itemModel = new ItemCartModel {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,
+                ImageUrl = null,
+                InStock = item.InStock,
+            };
+
+            if (item.Image != null)
+                itemModel.ImageUrl = ToBase64String(item.Image);
+            
+            return itemModel;
+        }
+        
+        
+        public static Item ToItemDbModel(ItemCartModel itemCartModel)
+        {
+            var dbModel = new Item {
+                Id = itemCartModel.Id,
+                Name = itemCartModel.Name,
+                Price = itemCartModel.Price,
+                Image = FromBase64String(itemCartModel.ImageUrl),
+                InStock = itemCartModel.InStock,
+            };
+            
+            return dbModel;
+        }
+        
+        
         public static ItemsCategoryViewModel ToItemsViewModel(IEnumerable<Item> items)
         {
             return new ItemsCategoryViewModel {
@@ -290,6 +325,45 @@ namespace FarmaShop.Web.DataMapper
 
             #endregion
 
+        #endregion
+
+        #region CartItems
+
+        public static CartItemModel ToCartItemModel(ShoppingCartItem shoppingCartItem)
+        {
+            var cartItem = new CartItemModel {
+                Id = shoppingCartItem.Id,
+                Amount = shoppingCartItem.Amount,
+                Item = ToItemCartModel(shoppingCartItem.Item),
+                User = shoppingCartItem.User
+            };
+
+            return cartItem;
+        }
+
+        public static ShoppingCartItem FromCartItemModel(CartItemModel cartItemModel)
+        {
+            var cartItemDbModel = new ShoppingCartItem {
+                Id = cartItemModel.Id,
+                Amount = cartItemModel.Amount,
+                Item = ToItemDbModel(cartItemModel.Item),
+                User = cartItemModel.User
+            };
+
+            return cartItemDbModel;
+        } 
+        
+        public static CartViewModel ToCartViewModel(IEnumerable<ShoppingCartItem> cartItemModels)
+        {
+            var cartViewModel = new CartViewModel {
+                Items = new List<CartItemModel>(cartItemModels.Select(ToCartItemModel))
+            };
+
+            return cartViewModel;
+        }
+
+
+        
         #endregion
     }
 }

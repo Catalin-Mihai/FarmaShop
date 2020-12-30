@@ -1,0 +1,38 @@
+﻿@using FarmaShop.Web.Models.Cart
+@model CartItemModel
+
+<div class="card mb-3 ml-auto mr-auto mb-5" id="card-@Model.Id">
+    <div class="row no-gutters">
+        <div class="col-md-4 m-auto">
+            @{
+                Model.Item.ImageUrl ??= "/favicon.ico";
+            }
+            <img src="@Model.Item.ImageUrl" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Item.Name</h5>
+                <p class="card-text">Disponibilitate: </p>
+                <div class="dropdown text-right">
+                    <span>Cantitate</span>
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">@Model.Amount</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item">1</a>
+                        <a class="dropdown-item">2</a>
+                        <a class="dropdown-item">3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer row">
+        <div class="col-9 text-center">
+            Cost produs: <span id="item-price">@Model.Item.Price</span> Lei
+        </div>
+        <div class="col-3">
+            <button class="btn btn-danger ">Sterge</button>
+        </div>
+    </div>
+</div>
+

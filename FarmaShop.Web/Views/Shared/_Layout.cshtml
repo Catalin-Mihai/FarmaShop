@@ -8,6 +8,7 @@
     <title>@ViewData["Title"] - FarmaShop.Web</title>
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/popper.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="@Url.Content("~/js/sidebar.js")"></script>
@@ -37,7 +38,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial"/>
+                    <ul class="navbar-nav">
+                        <partial name="_LoginPartial"/>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cosul meu
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+                        </li>
+                        @* Shopping cart *@
+                    </ul>
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>

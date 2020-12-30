@@ -94,5 +94,10 @@ namespace FarmaShop.Data.Repositories
         {
             await _context.SaveChangesAsync();
         }
+
+        public void DetachEntity(TEntity entityToDetach)
+        {
+            _context.Entry(entityToDetach).State = EntityState.Detached;
+        }
     }
 }

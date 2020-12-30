@@ -32,7 +32,12 @@
       <change afterPath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/js/popper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FarmaShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/ShoppingCartItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/ShoppingCartItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/FarmaShop/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Item/ByCategory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Item/ByCategory.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" beforeDir="false" afterPath="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" afterDir="false" />
@@ -55,45 +60,35 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/532BC60F-C085-451C-A9D0-477C70C5DDE0/A/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/5/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Migrations/ApplicationDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FarmaShop.Data/Seeds/Seeder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/10F/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/11A/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/.idea/.idea.FarmaShop/.idea/dataSources/b2bd2f90-1c74-4a9b-a594-a5427ba7494c/storage_v2/_src_/database/aspnet-FarmaShop-150DC198-6ADC-45E8-B615-F1F54E6E6D19.4UPBGw/schema/dbo.sYMBAA.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04924406-BACA-48B4-9254-8097E2E1D035/E/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/38/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E4BC6A6-8EFE-4267-A08F-6C025D22F9FD/E/HttpMethodOverrideOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/DAL/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D35053D2-E5E7-4729-A8DF-437D4A5E7C1E/9/MvcRazorDiagnosticListenerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Models/ShoppingCartItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Migrations/ApplicationDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/532BC60F-C085-451C-A9D0-477C70C5DDE0/A/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/FarmaShop.Data/Seeds/Seeder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Catalin/RiderProjects/FarmaShop/Data/Models/OrderDetail.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96BF7970-6344-4E2B-8BA1-2DED5D3D6307/1B/ScriptTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/38/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E4BC6A6-8EFE-4267-A08F-6C025D22F9FD/E/HttpMethodOverrideOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D35053D2-E5E7-4729-A8DF-437D4A5E7C1E/9/MvcRazorDiagnosticListenerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FarmaShop.Web/Areas/Identity/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/FarmaShop.Web/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD8126B-966E-414A-9571-A6B06E3B4A28/154/ControllerActionFilter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Pages/Category/New.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/New.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Validations/ImageMemorySize.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryNewModel.cs" />
         <option value="$PROJECT_DIR$/Data/Models/Category.cs" />
-        <option value="$PROJECT_DIR$/Data/Repositories/IRepository.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Update.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Category/CategoryUpdateModel.cs" />
-        <option value="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/BaseViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Category/_CategoryHomePartial.cshtml" />
@@ -110,32 +105,35 @@
         <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Item/ItemUpdateModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Edit.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Edit.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Index.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Util/Util.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Item/_ItemCategoryPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/ConfirmationDialogViewModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_ConfirmationDialogPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Category/Index.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/ByCategory.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CategoryController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/ItemController.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_LoginPartial.cshtml" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/Cart.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Cart/CartItemModel.cs" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Cart/CartItemsViewModel.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/css/cart.css" />
         <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/js/popper.js" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Cart/_CartItemPartial.cshtml" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Cart/CartViewModel.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Cart/Index.cshtml" />
         <option value="$PROJECT_DIR$/Data/DAL/ApplicationDbContext.cs" />
         <option value="$PROJECT_DIR$/Data/Models/OrderDetail.cs" />
-        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CartController.cs" />
         <option value="$PROJECT_DIR$/Data/Models/ShoppingCartItem.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/ViewModels/Cart/CartViewModel.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/Index.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Startup.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/css/cart.css" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/wwwroot/playground.html" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Item/ByCategory.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Item/ItemCartModel.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Models/Cart/CartItemModel.cs" />
+        <option value="$PROJECT_DIR$/Data/Repositories/IRepository.cs" />
+        <option value="$PROJECT_DIR$/Data/Repositories/BaseRepository.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/DataMapper/ModelMapper.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Controllers/CartController.cs" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Shared/Cart/_CartItemPartial.cshtml" />
+        <option value="$PROJECT_DIR$/FarmaShop.Web/Views/Cart/Index.cshtml" />
       </list>
     </option>
   </component>
@@ -256,7 +254,12 @@
       <workItem from="1608203233940" duration="8546000" />
       <workItem from="1608300539451" duration="1492000" />
       <workItem from="1608312890224" duration="11749000" />
-      <workItem from="1608716646820" duration="13354000" />
+      <workItem from="1608716646820" duration="19598000" />
+      <workItem from="1608745267792" duration="50000" />
+      <workItem from="1608745328828" duration="1554000" />
+      <workItem from="1608807687719" duration="6323000" />
+      <workItem from="1609154743630" duration="228000" />
+      <workItem from="1609331267716" duration="9791000" />
     </task>
     <task id="LOCAL-00001" summary="Add .gitignore file">
       <created>1606939579378</created>
@@ -566,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608738560154</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Remove ShoppingCart database model as it is useless and can be achieved with ShoppingCartItem model.">
+      <created>1608738805828</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1608738805828</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,86 +638,86 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-33" y="146" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1608204384825" />
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom" timestamp="1608727854643">
+    <state width="1493" height="251" key="GridCell.Tab.0.bottom" timestamp="1609341194332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608727854643" />
-    <state width="1493" height="276" key="GridCell.Tab.0.center" timestamp="1608727854643">
+    <state width="1493" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609341194332" />
+    <state width="1493" height="251" key="GridCell.Tab.0.center" timestamp="1609341194332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608727854643" />
-    <state width="1493" height="276" key="GridCell.Tab.0.left" timestamp="1608727854643">
+    <state width="1493" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609341194332" />
+    <state width="1493" height="251" key="GridCell.Tab.0.left" timestamp="1609341194332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608727854643" />
-    <state width="1493" height="276" key="GridCell.Tab.0.right" timestamp="1608727854643">
+    <state width="1493" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609341194332" />
+    <state width="1493" height="251" key="GridCell.Tab.0.right" timestamp="1609341194332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608727854643" />
-    <state width="1493" height="238" key="GridCell.Tab.1.bottom" timestamp="1608325896511">
+    <state width="1493" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609341194332" />
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom" timestamp="1609339772481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.1.center" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609339772481" />
+    <state width="1493" height="278" key="GridCell.Tab.1.center" timestamp="1609339772481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.1.left" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609339772481" />
+    <state width="1493" height="278" key="GridCell.Tab.1.left" timestamp="1609339772481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.1.right" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609339772481" />
+    <state width="1493" height="278" key="GridCell.Tab.1.right" timestamp="1609339772481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.2.bottom" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609339772481" />
+    <state width="1493" height="278" key="GridCell.Tab.2.bottom" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.2.center" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.2.center" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.2.left" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.2.left" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.2.right" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.2.right" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.3.bottom" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.3.bottom" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.3.center" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.3.center" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.3.left" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.3.left" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.3.right" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.3.right" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.4.bottom" timestamp="1608325896512">
+    <state width="1493" height="278" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.4.bottom" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608325896512" />
-    <state width="1493" height="238" key="GridCell.Tab.4.center" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.4.center" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.4.left" timestamp="1608325896511">
+    <state width="1493" height="278" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.4.left" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1608325896511" />
-    <state width="1493" height="238" key="GridCell.Tab.4.right" timestamp="1608325896512">
+    <state width="1493" height="278" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
+    <state width="1493" height="278" key="GridCell.Tab.4.right" timestamp="1609339772482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="238" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1608325896512" />
+    <state width="1493" height="278" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1609339772482" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1605890883059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -752,17 +762,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="451" y="293" key="data.grid.dml.preview.dialog/0.0.1536.824@0.0.1536.824" timestamp="1608205308681" />
-    <state x="450" y="11" width="636" height="801" key="find.popup" timestamp="1608724194108">
+    <state x="450" y="11" width="636" height="801" key="find.popup" timestamp="1609339279725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="450" y="11" width="636" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608724194108" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1608319315981">
+    <state x="450" y="11" width="636" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1609339279725" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1609339245211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1608319315981" />
-    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608032831364">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609339245211" />
+    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608808487701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608032831364" />
+    <state x="626" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608808487701" />
   </component>
 </project>

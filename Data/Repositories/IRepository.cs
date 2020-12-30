@@ -23,5 +23,7 @@ namespace FarmaShop.Data.Repositories
             string includeProperties = ""); // Might be very useful for dynamic filtering, ordering etc... 
 
         Task SaveChangesAsync();
+
+        void DetachEntity(TEntity entityToDetach); //Utility function. Detach an entity from the tracking system
     }
 }

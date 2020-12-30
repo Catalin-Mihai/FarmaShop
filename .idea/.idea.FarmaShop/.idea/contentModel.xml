@@ -32,6 +32,8 @@
           <e p="20201223154314_FarmaShop-V7.Designer.cs" t="Include" />
           <e p="20201223154810_FarmaShop-V8.cs" t="Include" />
           <e p="20201223154810_FarmaShop-V8.Designer.cs" t="Include" />
+          <e p="20201223155201_FarmaShop-V9.cs" t="Include" />
+          <e p="20201223155201_FarmaShop-V9.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -174,6 +176,7 @@
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Item" t="Include">
+            <e p="ItemCartModel.cs" t="Include" />
             <e p="ItemCategoryModel.cs" t="Include" />
             <e p="ItemModel.cs" t="Include" />
             <e p="ItemNewModel.cs" t="Include" />

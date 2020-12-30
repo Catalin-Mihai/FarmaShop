@@ -23,7 +23,7 @@
 @await Html.PartialAsync("_ConfirmationDialogPartial", new ConfirmationDialogViewModel
 {
     AjaxMethod = "DELETE",
-    AjaxUrl = @Url.Action("Delete", "Item"),
+    AjaxUrl = Url.Action("Delete", "Item"),
     ConfirmButton = "Sterge",
     DismissButton = "Inapoi",
     DialogMessage = "Esti sigur ca vrei sa stergi aceast produs?",

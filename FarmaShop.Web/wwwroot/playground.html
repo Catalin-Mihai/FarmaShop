@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="css/site.css">
+<script src="js/popper.js"></script>
 <script src="lib/jquery/dist/jquery.js"></script>
 <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="css/item.css">
+<link rel="stylesheet" href="css/cart.css">
 <link rel="stylesheet" href="lib/font-awesome/css/all.css">
 
-<div class="item mt-3">
-    <a href="google.ro">Category</a>
-    <h1 class="item-name mb-4">
-        Item name
-    </h1>
-    <div class="row item-first-row">
-        <div class="col-sm-8 text-center">
-            <img src="favicon.ico" class="item-image">
-        </div>
-        <div class="col-sm-4 m-auto">
-            <div class="item-price mb-4">
-                44
-                <span class="item-price-currency">Lei</span>
-            </div>
-            <div class="badge badge-success item-stock-badge mb-1">
-                In stoc
-            </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block text-nowrap">
-                <div class="text-left">
-                    <i class="fa fa-cart-plus ml-2 mr-3 fa-lg" aria-hidden="true"></i>
-                    <span class="">Adauga in cos</span>
+<div class="container">
+    <h2 class="mb-3">Produsele tale</h2>
+    <div class="row">
+        <div id="cart-content" class="col-8">
+                <div class="card mb-3 ml-auto mr-auto mb-5">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 m-auto">
+                            <img src="favicon.ico" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                            <div class="dropdown text-right">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    1
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li class="dropdown-item">1</li>
+                                    <li class="dropdown-item">2</li>
+                                    <li class="dropdown-item">3</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        
+                        <button class="btn btn-danger ">Sterge</button>
+                    </div>
                 </div>
-            </button>
-        </div>
-    </div>
-    <div class="row item-second-row flex-wrap">
-        <div class="col-sm-9">
-            <div class="item-description-title mb-2">
-                Descriere
-            </div>
-            <div class="item-description">
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                <div class="card mb-3 ml-auto mr-auto">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 m-auto">
+                            <img src="favicon.ico" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-            </div>
-        </div>
-        <div class="col-sm-3 text-center">
-            <div class="item-categories-title">
-                Categories
-            </div>
-            <div class="item-categories mt-2 text-center">
-                <div class="badge badge-light item-stock-badge mb-2 d-block">
-                    Categorie1
-                </div>
-                <div class="badge badge-light item-stock-badge mb-2 d-block">
-                    Categorie1
-                </div>
-                <div class="badge badge-light item-stock-badge mb-2 d-block">
-                    Categorie1
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="col-4" style="background-color: red">
+        <p>cascas</p>
     </div>
 </div>
+
+
+
+
+
+
