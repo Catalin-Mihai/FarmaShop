@@ -1,4 +1,5 @@
 ﻿@using FarmaShop.Data.Models
+@using FarmaShop.Web.ViewModels
 @model FarmaShop.Web.ViewModels.Cart.CartViewModel
 
 @section Styles
@@ -7,7 +8,7 @@
 }
 
 <div class="container">
-    @if (Model.Items != null)
+    @if (Model?.Items.Count > 0)
     {
         <h2 class="mb-3">Produsele tale</h2>
         <div class="row mt-4">
@@ -19,8 +20,20 @@
                     </div>
                 }
             </div>
-            <div class="col-4" style="background-color: red;">
-                sada
+            <div class="col-4 d-flex justify-content-center align-content-center pl-2 m-auto" style="background-color: white">
+                <div class="card" style="height: 50%;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-5">Sumar comanda</h5>
+                        <h2 class="card-text mb-5">Total: <span id="totalPrice">None</span> lei</h2>
+                        <button type="button" class="btn btn-primary btn-lg btn-block text-nowrap"
+                                onclick="location.href='@Url.Action("Checkout", "Cart")'">
+                            <div class="text-left text-wrap">
+                                <i class="fas fa-arrow-alt-circle-right ml-2 mr-3 fa-lg" aria-hidden="true"></i>
+                                <span class="">Continua comanda</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     }
@@ -31,6 +44,24 @@
 
 </div>
 
+
+@await Html.PartialAsync("_ConfirmationDialogPartial", new ConfirmationDialogViewModel
+{
+    AjaxMethod = "DELETE",
+    AjaxUrl = Url.Action("Delete", "Cart"),
+    ConfirmButton = "Sterge",
+    DismissButton = "Inapoi",
+    DialogMessage = "Esti sigur ca vrei sa stergi aceast produs din cos?",
+    SuccesMessage = "Produs sters din cos cu succes!",
+    FailMessage = "Ceva nu a mers bine! Este posibil sa nu se fi sters produsul din cos!",
+    RedirectLocation = "Cart",
+    ControllerParameters = new[]
+    {
+        "id"
+    }
+})
+
+
 <script>
 
     let models = @Json.Serialize(Model.Items);
@@ -40,8 +71,6 @@
     {
         for (let i = 0; i < models.length; i++)
         {
-            // console.log("i = " + i);
-            // console.log(models[i]);
             if (models[i].id === id)
             {
                 return models[i];
@@ -50,19 +79,46 @@
         return null;
     }
     
-    function updateCartItemPrice(id, price)
+    function computeTotalPrice()
     {
-        let parentCard = $("#card-" + id);
-        let priceElement = parentCard.find("#item-price");
-        console.log(id + price)
-        priceElement.text(price);
-    }
-    
-    $( document ).ready(function() {
+        let sum = 0;
         for (let i = 0; i < models.length; i++)
         {
-            updateCartItemPrice(models[i].id, models[i].amount*models[i].item.price);
+            sum += models[i].totalPrice;
         }
+        return sum;
+    }
+    
+    function refreshTotalPrice()
+    {
+        let totalPriceElement = $("#totalPrice");
+        totalPriceElement.text(computeTotalPrice());
+    }
+    
+    function updateCartItemPrice(cartId, price)
+    {
+        let parentCard = $("#card-" + cartId);
+        let priceElement = parentCard.find("#item-price");
+        console.log(cartId + price)
+        priceElement.text(price);
+        //Set a variable to store the total price of an item
+        let id = models.findIndex(x => x.id === parseInt(cartId))
+        console.log("cart: " + cartId + " id: " + id);
+        models[id].totalPrice = price;
+        refreshTotalPrice();
+    }
+    
+    //Update the items price on load
+    $( document ).ready(function() {
+        console.log(models);
+        for (let i = 0; i < models.length; i++)
+        {
+            console.log(models[i]);
+            //create totalPrice field
+            models[i].totalPrice = 0;
+            updateCartItemPrice(models[i].id, models[i].amount*models[i].item.price);    
+        }
+        refreshTotalPrice();
     });
     
     let amount = 0;
@@ -74,11 +130,8 @@
 
         let dropDownButton = parentCard.find('#dropdownMenuButton');
 
-        // Update button text
-        dropDownButton.html($(this).text());
-
         amount = parseInt($(this).text());
-
+        
         // Get model by id
         // the parentCardId is in the following format 'card-id'
         let updateModel = getModelById(parseInt(parentCardId));
@@ -87,7 +140,7 @@
         updateModel.amount = amount;
         // console.log("updateModel: " + JSON.stringify(updateModel));
         
-        
+        //Update model on controller
         $.ajax({
             type: 'PUT',
             url: '@Url.Action("Update", "Cart")',
@@ -97,10 +150,13 @@
                  if (xhr.status === 200)
                  {
                      updateCartItemPrice(parentCardId, data);
+                     // Update button text
+                     dropDownButton.html(amount);
                  }
             },
-            fail: function() {
-                alert( "Ceva nu a mers corect!" );
+            error: function(error) {
+                alert( "Ceva nu a mers corect! " + error.responseText);
+                console.log(error);
             }
         });
 

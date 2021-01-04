@@ -117,7 +117,7 @@ namespace FarmaShop.Web.Controllers
                 return Ok();
             }
 
-            return NotFound();
+            return NotFound("Categoria nu a putut fi gasita in baza de date!");
         }
     }
 }

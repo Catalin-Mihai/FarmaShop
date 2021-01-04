@@ -1,0 +1,34 @@
+﻿@model FarmaShop.Web.Models.Order.OrderNewModel
+
+<h2>Detalii livrare comanda</h2>
+@using (Html.BeginForm(actionName: "Create", controllerName: "Order", method: FormMethod.Post))
+{
+    @Html.Label("ZipCode", "Codul postal")
+    <br />
+    @Html.TextBoxFor(c => c.ZipCode, null, new { placeholder = "Introduceti codul postal", @class = "formcontrol" })
+    @Html.ValidationMessageFor(c => c.ZipCode, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("Country", "Numele tarii")
+    <br />
+    @Html.TextBoxFor(b => b.Country, null, new { placeholder = "Introduceti numele tarii unde va fi expediata comanda", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Country, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("Country", "Numele orasului")
+    <br />
+    @Html.TextBoxFor(b => b.City, null, new { placeholder = "Introduceti numele orasului unde va fi expediata comanda", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.City, "", new { @class = "text-danger" })
+    <br /><br />
+    
+    
+    @Html.Label("Address", "Adresa de livrare")
+    <br />
+    @Html.TextBoxFor(b => b.Address, null, new { placeholder = "Introduceti adresa de livrare unde va fi expediata comanda", @class = "formcontrol" })
+    @Html.ValidationMessageFor(b => b.Address, "", new { @class = "text-danger" })
+    <br /><br />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+}

@@ -48,12 +48,13 @@
             }
 
             <button type="button" class="btn btn-primary btn-lg btn-block text-nowrap"
-                    onclick="location.href='@Url.Action("Add", "Cart", new {id = Model.Id})'">
+                    onclick="addToCart(@Model.Id)">
                 <div class="text-left">
                     <i class="fa fa-cart-plus ml-2 mr-3 fa-lg" aria-hidden="true"></i>
                     <span class="">Adauga in cos</span>
                 </div>
             </button>
+            <h3>In stoc: @Model.InStock</h3>
         </div>
     </div>
     <div class="row item-second-row flex-wrap">
@@ -80,3 +81,27 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function addToCart(id)
+    {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Add", "Cart")',
+            data: 
+                {"id": id}, //Model id
+            success: function (data, textStatus, xhr) {
+                console.log("success"); 
+                if (xhr.status === 200)
+                 {
+                     alert("Obiectul a fost adaugat in cos cu succes!");
+                 }
+            },
+            error: function (error)
+            {
+                alert( "Ceva nu a mers corect! " + error.responseText+ " Obiectul nu a fost adaugat in cos" );
+            }
+        });
+    }
+</script>

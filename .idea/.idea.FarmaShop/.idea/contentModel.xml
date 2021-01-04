@@ -34,10 +34,19 @@
           <e p="20201223154810_FarmaShop-V8.Designer.cs" t="Include" />
           <e p="20201223155201_FarmaShop-V9.cs" t="Include" />
           <e p="20201223155201_FarmaShop-V9.Designer.cs" t="Include" />
+          <e p="20210103165840_FarmaShop-V10.cs" t="Include" />
+          <e p="20210103165840_FarmaShop-V10.Designer.cs" t="Include" />
+          <e p="20210103170509_FarmaShop-V11.cs" t="Include" />
+          <e p="20210103170509_FarmaShop-V11.Designer.cs" t="Include" />
+          <e p="20210103171105_FarmaShop-V12.cs" t="Include" />
+          <e p="20210103171105_FarmaShop-V12.Designer.cs" t="Include" />
+          <e p="20210103171959_FarmaShop-V13.cs" t="Include" />
+          <e p="20210103171959_FarmaShop-V13.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ApplicationUser.cs" t="Include" />
+          <e p="ApplicationUserInfo.cs" t="Include" />
           <e p="Category.cs" t="Include" />
           <e p="Item.cs" t="Include" />
           <e p="Order.cs" t="Include" />
@@ -156,6 +165,7 @@
           <e p="CategoryController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
           <e p="ItemController.cs" t="Include" />
+          <e p="OrderController.cs" t="Include" />
         </e>
         <e p="DataMapper" t="Include">
           <e p="ModelMapper.cs" t="Include" />
@@ -181,6 +191,9 @@
             <e p="ItemModel.cs" t="Include" />
             <e p="ItemNewModel.cs" t="Include" />
             <e p="ItemUpdateModel.cs" t="Include" />
+          </e>
+          <e p="Order" t="Include">
+            <e p="OrderNewModel.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -239,6 +252,9 @@
             <e p="Index.cshtml" t="Include" />
             <e p="New.cshtml" t="Include" />
           </e>
+          <e p="Order" t="Include">
+            <e p="New.cshtml" t="Include" />
+          </e>
           <e p="Shared" t="Include">
             <e p="_ConfirmationDialogPartial.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
@@ -255,6 +271,7 @@
             <e p="Item" t="Include">
               <e p="_ItemCategoryPartial.cshtml" t="Include" />
             </e>
+            <e p="OrderPlaced.cshtml" t="Include" />
           </e>
         </e>
         <e p="Web.csproj" t="IncludeRecursive" />

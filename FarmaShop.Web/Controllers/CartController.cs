@@ -16,12 +16,16 @@ namespace FarmaShop.Web.Controllers
         private readonly IRepository<Item> _itemRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IRepository<ShoppingCartItem> _shoppingCartItemRepository;
+        private readonly IRepository<Order> _orderRepository;
+        private readonly OrderDetailRepository _orderDetailRepository;
 
-        public CartController(UserManager<ApplicationUser> userManager, IRepository<ShoppingCartItem> shoppingCartItemRepository, IRepository<Item> itemRepository)
+        public CartController(UserManager<ApplicationUser> userManager, IRepository<ShoppingCartItem> shoppingCartItemRepository, IRepository<Item> itemRepository, IRepository<Order> orderRepository, IRepository<OrderDetail> orderDetailRepository)
         {
             _userManager = userManager;
             _shoppingCartItemRepository = shoppingCartItemRepository;
             _itemRepository = itemRepository;
+            _orderRepository = orderRepository;
+            _orderDetailRepository = (OrderDetailRepository) orderDetailRepository;
         }
 
         // GET
@@ -43,7 +47,8 @@ namespace FarmaShop.Web.Controllers
         }
 
         [Authorize]
-        async public Task Add(int id)
+        [HttpPost]
+        async public Task<IActionResult> Add(int id)
         {
             Console.WriteLine("id: " + id);
             
@@ -51,8 +56,8 @@ namespace FarmaShop.Web.Controllers
             
             var item = await _itemRepository.GetById(id);
 
-            if (item == null)
-                return;
+            if (item == null || item.InStock < 1)
+                return BadRequest("Nu exista stoc!");
 
             var userCartItems = 
                 await _shoppingCartItemRepository.Get(it => it.User == user, 
@@ -60,7 +65,7 @@ namespace FarmaShop.Web.Controllers
             
             if (userCartItems != null && userCartItems.Select(ci => ci.Item.Id).Contains(id)) {
                 // The item is already in the cart
-                return;
+                return BadRequest("Acest obiect este deja in cos!");
             }
             
             var cartItem = new ShoppingCartItem {
@@ -71,8 +76,10 @@ namespace FarmaShop.Web.Controllers
 
             await _shoppingCartItemRepository.Add(cartItem);
             await _shoppingCartItemRepository.SaveChangesAsync();
+            return Ok();
         }
-
+        
+        
         [HttpPut]
         [Authorize]
         async public Task<IActionResult> Update(CartItemModel updateCartItem)
@@ -83,11 +90,11 @@ namespace FarmaShop.Web.Controllers
             //Do we trust client side built update model???
             var updateCartItemDbModel = DataMapper.ModelMapper.FromCartItemModel(updateCartItem);
             
-
-            // Check if it exists in the database and it belongs to user
             if (updateCartItemDbModel == null)
                 return BadRequest();
-            
+
+            if (updateCartItemDbModel.Amount >= updateCartItemDbModel.Item.InStock)
+                return BadRequest("Nu exista stoc suficient!");
 
             _shoppingCartItemRepository.Update(updateCartItemDbModel);
             await _shoppingCartItemRepository.SaveChangesAsync();
@@ -95,6 +102,30 @@ namespace FarmaShop.Web.Controllers
             // Return the new price calculated on the server
             // As we don't trust the client side calculations.
             return Ok(updateCartItemDbModel.Amount * updateCartItemDbModel.Item.Price);
+        }
+        
+        [Authorize]
+        [HttpDelete]
+        async public Task<IActionResult> Delete(int id)
+        {
+            Console.WriteLine("A intrat pe delete");
+            Console.WriteLine("Id: " + id);
+            var itemDb = await _shoppingCartItemRepository.GetById(id);
+
+            if (itemDb != null) {
+                _shoppingCartItemRepository.Delete(itemDb);
+                await _shoppingCartItemRepository.SaveChangesAsync();
+                return Ok();
+            }
+
+            return NotFound("Obiectul nu a putut fi gasit in baza de date!");
+        }
+
+
+        public IActionResult Checkout()
+        {
+            //Return user to the new order page
+            return RedirectToAction("New", "Order");
         }
         
     }

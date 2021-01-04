@@ -4,14 +4,16 @@ using FarmaShop.Data.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FarmaShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210103171105_FarmaShop-V12")]
+    partial class FarmaShopV12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,6 +110,9 @@ namespace FarmaShop.Data.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("UserInfoId")
+                        .IsUnique();
+
                     b.ToTable("AspNetUsers");
                 });
 
@@ -139,14 +144,10 @@ namespace FarmaShop.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
 
                     b.ToTable("ApplicationUserInfos");
                 });
@@ -440,13 +441,15 @@ namespace FarmaShop.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUserInfo", b =>
+            modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("FarmaShop.Data.Models.ApplicationUser", "User")
-                        .WithOne("UserInfo")
-                        .HasForeignKey("FarmaShop.Data.Models.ApplicationUserInfo", "UserId");
+                    b.HasOne("FarmaShop.Data.Models.ApplicationUserInfo", "UserInfo")
+                        .WithOne("User")
+                        .HasForeignKey("FarmaShop.Data.Models.ApplicationUser", "UserInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("UserInfo");
                 });
 
             modelBuilder.Entity("FarmaShop.Data.Models.Order", b =>
@@ -548,8 +551,11 @@ namespace FarmaShop.Data.Migrations
             modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Orders");
+                });
 
-                    b.Navigation("UserInfo");
+            modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUserInfo", b =>
+                {
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FarmaShop.Data.Models.Order", b =>

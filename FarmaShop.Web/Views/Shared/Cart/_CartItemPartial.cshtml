@@ -31,7 +31,7 @@
             Cost produs: <span id="item-price">@Model.Item.Price</span> Lei
         </div>
         <div class="col-3">
-            <button class="btn btn-danger ">Sterge</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="ShowConfirmDialog(@Model.Id)">Sterge</button>
         </div>
     </div>
 </div>

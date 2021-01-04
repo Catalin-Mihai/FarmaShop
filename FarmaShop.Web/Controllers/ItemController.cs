@@ -146,7 +146,7 @@ namespace FarmaShop.Web.Controllers
                 return Ok();
             }
 
-            return NotFound();
+            return NotFound("Obiectul nu a putut fi gasit in baza de date!");
         }
     }
 }

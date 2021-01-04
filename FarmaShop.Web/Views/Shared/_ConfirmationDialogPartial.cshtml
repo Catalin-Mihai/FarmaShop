@@ -55,7 +55,7 @@
                     window.location = "@Model.RedirectLocation";
                 }
             },
-            fail: function(xhr, textStatus, errorThrown){
+            error: function(xhr, textStatus, errorThrown){
                    alert('@Model.FailMessage');
             }
         })   

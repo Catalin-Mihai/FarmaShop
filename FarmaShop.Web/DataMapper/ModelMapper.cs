@@ -14,6 +14,7 @@ using FarmaShop.Data.Repositories;
 using FarmaShop.Web.Models.Cart;
 using FarmaShop.Web.Models.Category;
 using FarmaShop.Web.Models.Item;
+using FarmaShop.Web.Models.Order;
 using FarmaShop.Web.ViewModels.Cart;
 using FarmaShop.Web.ViewModels.Category;
 using FarmaShop.Web.ViewModels.Item;
@@ -364,6 +365,22 @@ namespace FarmaShop.Web.DataMapper
 
 
         
+        #endregion
+
+        #region Order
+
+            public static Order ToOrderDbModel(OrderNewModel newModel)
+            {
+                var orderDbModel = new Order {
+                    Address = newModel.Address,
+                    City = newModel.City,
+                    Country = newModel.Country,
+                    ZipCode = newModel.ZipCode
+                };
+
+                return orderDbModel;
+            }
+
         #endregion
     }
 }

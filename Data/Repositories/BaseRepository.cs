@@ -12,8 +12,8 @@ namespace FarmaShop.Data.Repositories
     //Generic repository that implements the generic repository interface
     public class BaseRepository<TEntity>: IRepository<TEntity> where TEntity : class
     {
-        private ApplicationDbContext _context;
-        private DbSet<TEntity> _dbSet; //TEntity must be a class! Constraint added for the class generic argument
+        protected ApplicationDbContext _context;
+        protected DbSet<TEntity> _dbSet; //TEntity must be a class! Constraint added for the class generic argument
         
         public BaseRepository(ApplicationDbContext context)
         {

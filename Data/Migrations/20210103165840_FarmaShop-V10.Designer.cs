@@ -4,14 +4,16 @@ using FarmaShop.Data.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FarmaShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210103165840_FarmaShop-V10")]
+    partial class FarmaShopV10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,9 +93,6 @@ namespace FarmaShop.Data.Migrations
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
-                    b.Property<int>("UserInfoId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -109,46 +108,6 @@ namespace FarmaShop.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUserInfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("AddressLine1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AddressLine2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Balance")
-                        .HasColumnType("float");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
-
-                    b.ToTable("ApplicationUserInfos");
                 });
 
             modelBuilder.Entity("FarmaShop.Data.Models.Category", b =>
@@ -440,15 +399,6 @@ namespace FarmaShop.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUserInfo", b =>
-                {
-                    b.HasOne("FarmaShop.Data.Models.ApplicationUser", "User")
-                        .WithOne("UserInfo")
-                        .HasForeignKey("FarmaShop.Data.Models.ApplicationUserInfo", "UserId");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("FarmaShop.Data.Models.Order", b =>
                 {
                     b.HasOne("FarmaShop.Data.Models.ApplicationUser", "User")
@@ -548,8 +498,6 @@ namespace FarmaShop.Data.Migrations
             modelBuilder.Entity("FarmaShop.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Orders");
-
-                    b.Navigation("UserInfo");
                 });
 
             modelBuilder.Entity("FarmaShop.Data.Models.Order", b =>
