@@ -11,10 +11,5 @@ namespace FarmaShop.Data.Repositories
         public OrderDetailRepository(ApplicationDbContext context) : base(context)
         {
         }
-
-        public Task AddRange(IEnumerable<OrderDetail> orderDetails)
-        {
-            return _dbSet.AddRangeAsync(orderDetails);
-        }
     }
 }

@@ -15,13 +15,15 @@ namespace FarmaShop.Web.Controllers
     public class HomeController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        
         private const int AdminRoleAdded = 1;
         private const int AlreadyAnAdmin = 2;
 
-        public HomeController(UserManager<ApplicationUser> userManager)
+        public HomeController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
@@ -50,6 +52,8 @@ namespace FarmaShop.Web.Controllers
             if (!isAdmin) {
                 await _userManager.AddToRoleAsync(user, "Admin");
                 state = AdminRoleAdded;
+                //Reload account.
+                await _signInManager.RefreshSignInAsync(user);
             }
 
             return RedirectToAction("Privacy", new {state = state});

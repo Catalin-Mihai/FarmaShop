@@ -4,14 +4,16 @@ using FarmaShop.Data.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FarmaShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210104143113_FarmaShop-V14")]
+    partial class FarmaShopV14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -467,7 +469,7 @@ namespace FarmaShop.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("FarmaShop.Data.Models.Order", "Order")
-                        .WithMany("OrderDetails")
+                        .WithMany("OrderLines")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -556,7 +558,7 @@ namespace FarmaShop.Data.Migrations
 
             modelBuilder.Entity("FarmaShop.Data.Models.Order", b =>
                 {
-                    b.Navigation("OrderDetails");
+                    b.Navigation("OrderLines");
                 });
 #pragma warning restore 612, 618
         }

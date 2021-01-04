@@ -15,17 +15,17 @@ namespace FarmaShop.Web.Controllers
     {
         private readonly IRepository<Item> _itemRepository;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly ShoppingCartItemRepository _shoppingCartItemRepository;
+        private readonly IRepository<ShoppingCartItem> _shoppingCartItemRepository;
         private readonly IRepository<Order> _orderRepository;
-        private readonly OrderDetailRepository _orderDetailRepository;
+        private readonly IRepository<OrderDetail> _orderDetailRepository;
 
         public OrderController(IRepository<Item> itemRepository, UserManager<ApplicationUser> userManager, IRepository<ShoppingCartItem> shoppingCartItemRepository, IRepository<Order> orderRepository, IRepository<OrderDetail> orderDetailRepository)
         {
             _itemRepository = itemRepository;
             _userManager = userManager;
-            _shoppingCartItemRepository = (ShoppingCartItemRepository) shoppingCartItemRepository;
+            _shoppingCartItemRepository = shoppingCartItemRepository;
             _orderRepository = orderRepository;
-            _orderDetailRepository = (OrderDetailRepository) orderDetailRepository;
+            _orderDetailRepository = orderDetailRepository;
         }
 
         // GET
@@ -82,7 +82,7 @@ namespace FarmaShop.Web.Controllers
                 }
                 
                 //Remove user cart items;
-                _shoppingCartItemRepository.RemoveRange(shoppingCartItems);
+                _shoppingCartItemRepository.DeleteRange(shoppingCartItems);
                 
                 await _orderDetailRepository.AddRange(orderDetails);
                 await _orderDetailRepository.SaveChangesAsync();

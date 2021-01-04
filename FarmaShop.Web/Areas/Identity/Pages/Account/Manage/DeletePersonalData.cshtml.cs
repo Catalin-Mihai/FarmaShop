@@ -1,11 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading.Tasks;
 using FarmaShop.Data.Models;
+using FarmaShop.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+
 
 namespace FarmaShop.Web.Areas.Identity.Pages.Account.Manage
 {
@@ -14,15 +17,25 @@ namespace FarmaShop.Web.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
+        private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<OrderDetail> _orderDetailsRepository;
+        private readonly IRepository<ApplicationUser> _userRepository;
+        private readonly IRepository<ApplicationUserInfo> _userInfoRepository;
+        private readonly IRepository<ShoppingCartItem> _shoppingCartItemsRepository;
 
         public DeletePersonalDataModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger, IRepository<Order> orderRepository, IRepository<ApplicationUser> userInfoRepository, IRepository<ShoppingCartItem> shoppingCartItemsRepository, IRepository<ApplicationUserInfo> userInfoRepository1, IRepository<OrderDetail> orderDetailsRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _orderRepository = orderRepository;
+            _userRepository = userInfoRepository;
+            _shoppingCartItemsRepository = shoppingCartItemsRepository;
+            _userInfoRepository = userInfoRepository1;
+            _orderDetailsRepository = orderDetailsRepository;
         }
 
         [BindProperty]
@@ -51,7 +64,11 @@ namespace FarmaShop.Web.Areas.Identity.Pages.Account.Manage
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var user = await _userManager.GetUserAsync(User);
+            //We can retrieve the user by our custom made Repository to include the navigation proprieties.
+            //We will need them later
+            var user = (await _userRepository.Get(x => x.Email == User.Identity.Name,
+                includeProperties: "Orders,Orders.OrderDetails,ShoppingCartItems,UserInfo")).FirstOrDefault();
+            
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -66,6 +83,19 @@ namespace FarmaShop.Web.Areas.Identity.Pages.Account.Manage
                     return Page();
                 }
             }
+
+            //We have to delete the related fields: Order, ShoppingCartItems and UserInfo
+            //Delete cascade
+            foreach(var order in user.Orders)
+            {
+                _orderDetailsRepository.DeleteRange(order.OrderDetails);
+            }
+            _orderRepository.DeleteRange(user.Orders);
+            
+            _shoppingCartItemsRepository.DeleteRange(user.ShoppingCartItems);
+            
+            if(user.UserInfo != null)
+                _userInfoRepository.Delete(user.UserInfo);
 
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);

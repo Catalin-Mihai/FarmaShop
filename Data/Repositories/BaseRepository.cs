@@ -26,6 +26,11 @@ namespace FarmaShop.Data.Repositories
             return await _dbSet.ToListAsync();
         }
 
+        public virtual async Task AddRange(IEnumerable<TEntity> entities)
+        {
+            await _dbSet.AddRangeAsync(entities);
+        }
+
         public virtual async Task<TEntity> GetById(object id)
         {
             return await _dbSet.FindAsync(id);
@@ -34,6 +39,11 @@ namespace FarmaShop.Data.Repositories
         public virtual async Task Add(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
+        }
+
+        public virtual void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.RemoveRange(entities);
         }
 
         public virtual async Task Delete(object id)

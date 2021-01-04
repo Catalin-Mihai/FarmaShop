@@ -8,7 +8,7 @@ namespace FarmaShop.Data.Models
     {
         public int Id { get; set; }
 
-        public IEnumerable<OrderDetail> OrderLines { get; set; }
+        public IEnumerable<OrderDetail> OrderDetails { get; set; }
 
         public string ZipCode { get; set; }
 

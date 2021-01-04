@@ -12,9 +12,12 @@ namespace FarmaShop.Data.Repositories
     {
         Task<IEnumerable<TEntity>> GetAll();
         Task Add(TEntity entityToCreate); //C.
+        public Task AddRange(IEnumerable<TEntity> entities); //C. Creates range
         Task<TEntity> GetById(object id);  //R. Generic id because the id can be integer, string, etc...
         void Update(TEntity entityToDelete); //U.  
-        void Delete(TEntity entityToUpdate); //D. // Just mark the entity as 'dirty'
+        void Delete(TEntity entityToUpdate); //D.
+
+        void DeleteRange(IEnumerable<TEntity> entities); //D. Deletes range
         Task Delete(object id); //Delete by id;
 
         Task<IEnumerable<TEntity>> Get(

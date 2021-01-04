@@ -10,9 +10,5 @@ namespace FarmaShop.Data.Repositories
         public ShoppingCartItemRepository(ApplicationDbContext context) : base(context)
         {
         }
-        public void RemoveRange(IEnumerable<ShoppingCartItem> cartItems)
-        {
-            _dbSet.RemoveRange(cartItems);
-        }
     }
 }

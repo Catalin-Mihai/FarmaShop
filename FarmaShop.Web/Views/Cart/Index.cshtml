@@ -64,7 +64,7 @@
 
 <script>
 
-    let models = @Json.Serialize(Model.Items);
+    let models = @Json.Serialize(Model?.Items);
     console.log(models);
 
     function getModelById(id)
@@ -138,7 +138,7 @@
         
         //Update model values
         updateModel.amount = amount;
-        // console.log("updateModel: " + JSON.stringify(updateModel));
+        console.log("updateModel: " + updateModel);
         
         //Update model on controller
         $.ajax({

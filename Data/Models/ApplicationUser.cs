@@ -13,6 +13,8 @@ namespace FarmaShop.Data.Models
         public DateTime MemberSince { get; set; }
         
         public IEnumerable<Order> Orders { get; set; }
+        
+        public IEnumerable<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public int UserInfoId { get; set; }
         

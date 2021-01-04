@@ -339,6 +339,10 @@ namespace FarmaShop.Web.DataMapper
                 User = shoppingCartItem.User
             };
 
+            //Be aware of object items cycle
+            //We already specify the cart items. No need to specify them to user too
+            cartItem.User.ShoppingCartItems = null;
+            
             return cartItem;
         }
 
