@@ -53,7 +53,7 @@ namespace FarmaShop.Data.Seeds
             }
             
             if (!context.Items.Any() || forceOverride) {
-                //No categories in the database
+                //No items in the database
                 task2 = context.Items.AddRangeAsync(Items);
             }
 

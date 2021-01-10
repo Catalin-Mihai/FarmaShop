@@ -30,6 +30,8 @@ namespace FarmaShop.Web.Models.Item
         [Range(0, Int32.MaxValue, ErrorMessage = "Stocul nu poate fi negativ!")]
         public int InStock { get; set; }
         
-        public string CategoriesIdsSerialized { get; set; }
+        [Required]
+        [MinCategoriesCount(1, ErrorMessage = "Trebuie selectata cel putin o categorie!")]
+        public IList<ItemNewCategoriesCheckBoxModel> Categories { set; get; }
     }
 }

@@ -122,6 +122,30 @@ namespace FarmaShop.Web.DataMapper
             };
         }
 
+
+        public static ItemNewModel ToItemNewModel(IEnumerable<Category> allDbCategories)
+        {
+            var categoriesCheckBoxes = new List<ItemNewCategoriesCheckBoxModel>();
+            
+            foreach (var category in allDbCategories) {
+            
+                categoriesCheckBoxes.Add(new ItemNewCategoriesCheckBoxModel {
+                    Checked = false,
+                    Id = category.Id,
+                    Name = category.Name
+                });
+            
+            }
+            
+            var newItemModel = new ItemNewModel {
+                //Serialize the categories list because we can't use complex data types in views
+                Categories = categoriesCheckBoxes
+            };
+
+            return newItemModel;
+        }
+        
+        
         async public static Task<Item> ToItemDbModel(ItemNewModel newModel, IRepository<Category> repository = null)
         {
             var dbModel = new Item {
@@ -134,18 +158,17 @@ namespace FarmaShop.Web.DataMapper
                 ShortDescription = newModel.ShortDescription
             };
 
-            if (repository != null && newModel.CategoriesIdsSerialized != null) {
-
-                //Get the categories from DB
-                dbModel.Categories = new List<Category>();
-                var categoriesIds = JsonSerializer.Deserialize<List<int>>(newModel.CategoriesIdsSerialized);
+            if (repository != null && newModel.Categories != null) {
                 
-                if (categoriesIds != null)
-                    foreach (var categoryId in categoriesIds) {
-                        var category = await repository.GetById(categoryId);
-                        if (category != null)
-                            dbModel.Categories.Add(category); 
+                dbModel.Categories = new List<Category>();
+
+                foreach (var category in newModel.Categories) {
+                    if (category.Checked) {
+                        var categoryDb = await repository.GetById(category.Id);
+                        if (categoryDb != null)
+                            dbModel.Categories.Add(categoryDb); 
                     }
+                }
             }
 
             return dbModel;
@@ -179,7 +202,7 @@ namespace FarmaShop.Web.DataMapper
             return itemModel;
         }
         
-        public static ItemUpdateModel ToItemUpdateModel(Item dbModel)
+        public static ItemUpdateModel ToItemUpdateModel(Item dbModel, IEnumerable<Category> allDbCategories)
         {
             var updateModel = new ItemUpdateModel {
                 Id = dbModel.Id,
@@ -188,11 +211,25 @@ namespace FarmaShop.Web.DataMapper
                 LongDescription = dbModel.LongDescription,
                 Price = dbModel.Price,
                 InStock = dbModel.InStock,
-                CategoriesIdsSerialized = 
-                    JsonSerializer.Serialize(dbModel.Categories),
+                Categories = new List<ItemNewCategoriesCheckBoxModel>(),
                 OldImageUrl = ToBase64String(dbModel.Image)
             };
+
+            foreach (var category in allDbCategories) {
+                var itemNewCategoriesCheckBoxModel = new ItemNewCategoriesCheckBoxModel {
+                    Id = category.Id,
+                    Name = category.Name,
+                    Checked = false
+                };
+
+                //mark dbModel categories as checked
+                if (dbModel.Categories.Select(x => x.Id).Contains(category.Id)) {
+                    itemNewCategoriesCheckBoxModel.Checked = true;
+                }
                 
+                updateModel.Categories.Add(itemNewCategoriesCheckBoxModel);
+            }
+
             return updateModel;
         }
 
@@ -213,18 +250,18 @@ namespace FarmaShop.Web.DataMapper
                 dbModel.Image = FromBase64String(updateModel.OldImageUrl);
             }
 
-            if (repository != null && updateModel.CategoriesIdsSerialized != null) {
-
-                //Get the categories from DB
-                dbModel.Categories = new List<Category>();
-                var categoriesIds = JsonSerializer.Deserialize<List<int>>(updateModel.CategoriesIdsSerialized);
+            if (repository != null && updateModel.Categories != null) {
                 
-                if (categoriesIds != null)
-                    foreach (var categoryId in categoriesIds) {
-                        var category = await repository.GetById(categoryId);
-                        if (category != null)
-                            dbModel.Categories.Add(category); 
+                dbModel.Categories = new List<Category>();
+
+                foreach (var category in updateModel.Categories) {
+                    if (category.Checked) {
+                        var categoryDb = (await repository.Get(x => x.Id == category.Id,
+                            includeProperties:"Items")).First();
+                        if (categoryDb != null)
+                            dbModel.Categories.Add(categoryDb); 
                     }
+                }
             }
 
             return dbModel;

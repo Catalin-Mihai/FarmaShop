@@ -46,8 +46,18 @@
     <br /><br />
           
           
-    // A new item has a default category (the one from new category was clicked)
-    @Html.HiddenFor(b => b.CategoriesIdsSerialized)
+    @Html.LabelFor(b => b.Categories, "Alegeti categoriile din care produsul va face parte: ")
+    <br />
+    for (var i = 0; i < Model.Categories.Count; i++)
+    {
+        @Html.HiddenFor(b => b.Categories[i].Id)
+        @Html.HiddenFor(b => b.Categories[i].Name)
+        @Html.CheckBoxFor(b => b.Categories[i].Checked)
+        @Html.DisplayFor(b => b.Categories[i].Name)
+        <br />
+    }
+    @Html.ValidationMessageFor(b => b.Categories, "", new { @class = "text-danger" })
+    <br /><br />
           
           
     <p>TODO: Lista de ales mai multe categorii pentru produs</p>

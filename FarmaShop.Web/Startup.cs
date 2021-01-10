@@ -51,8 +51,7 @@ namespace FarmaShop.Web
             // Scoped = Same instance for same request. Different between requests.
             // Transient = New instance for every controller or whatever.
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
-            services.AddScoped<IRepository<OrderDetail>, OrderDetailRepository>();
-            services.AddScoped<IRepository<ShoppingCartItem>, ShoppingCartItemRepository>();
+            services.AddScoped<ItemRepository, ItemRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

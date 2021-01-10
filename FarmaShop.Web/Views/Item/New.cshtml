@@ -1,4 +1,5 @@
-﻿@model FarmaShop.Web.Models.Item.ItemNewModel
+﻿@using Microsoft.AspNetCore.Mvc.RazorPages
+@model FarmaShop.Web.Models.Item.ItemNewModel
 
 <h2>New</h2>
 @using (Html.BeginForm(actionName: "Create", controllerName: "Item", method: FormMethod.Post, new { enctype="multipart/form-data"}))
@@ -36,25 +37,24 @@
     @Html.TextBoxFor(b => b.InStock, null, new { placeholder = "Introduceti numarul de produse in stoc", @class = "formcontrol" })
     @Html.ValidationMessageFor(b => b.InStock, "", new { @class = "text-danger" })
     <br /><br />
-          
-          
-    // A new item has a default category (the one from new category was clicked)
-    @Html.HiddenFor(b => b.CategoriesIdsSerialized)
-          
-          
-    <p>TODO: Lista de ales mai multe categorii pentru produs</p>
-    @*@Html.Label("CategoriesIds", "Pretul produsului in LEI")
+
+    @Html.LabelFor(b => b.Categories, "Alegeti categoriile din care produsul va face parte: ")
     <br />
-    @Html.TextBoxFor(b => b.CategoriesIds, null, new { placeholder = "Introduceti pretul produsului in LEI", @class = "formcontrol" })
-    @Html.ValidationMessageFor(b => b.InStock, "", new { @class = "text-danger" })
-    <br />*@
-    
-    
+    for (var i = 0; i < Model.Categories.Count; i++)
+    {
+        @Html.HiddenFor(b => b.Categories[i].Id)
+        @Html.HiddenFor(b => b.Categories[i].Name)
+        @Html.CheckBoxFor(b => b.Categories[i].Checked)
+        @Html.DisplayFor(b => b.Categories[i].Name)
+        <br />
+    }
+    @Html.ValidationMessageFor(b => b.Categories, "", new { @class = "text-danger" })
+    <br /><br />
+          
     @Html.Label("Image", "Imagine")
     <br />
-@*     <input type="file" name="Image" itemid="Image" placeholder="Incarcari imaginea categoriei" *@
-@*            data-val-required="The image field is required"> *@
     <input asp-for="Image" accept="image/*" />
+    
 @*     <span asp-validation-for="Image" class="text-danger"></span> *@
     @Html.ValidationMessageFor(b => b.Image, "", new { @class = "text-danger" })
     <br /><br />

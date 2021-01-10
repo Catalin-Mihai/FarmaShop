@@ -196,6 +196,7 @@
             <e p="ItemCartModel.cs" t="Include" />
             <e p="ItemCategoryModel.cs" t="Include" />
             <e p="ItemModel.cs" t="Include" />
+            <e p="ItemNewCategoriesCheckBoxModel.cs" t="Include" />
             <e p="ItemNewModel.cs" t="Include" />
             <e p="ItemUpdateModel.cs" t="Include" />
           </e>
@@ -225,6 +226,7 @@
         </e>
         <e p="Validations" t="Include">
           <e p="ImageMemorySize.cs" t="Include" />
+          <e p="MinCategoriesCount.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
           <e p="Cart" t="Include">

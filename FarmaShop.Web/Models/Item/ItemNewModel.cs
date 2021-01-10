@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using FarmaShop.Web.Models.Category;
 using FarmaShop.Web.Validations;
 using Microsoft.AspNetCore.Http;
 
@@ -31,7 +30,9 @@ namespace FarmaShop.Web.Models.Item
         [Required]
         [Range(0, Int32.MaxValue, ErrorMessage = "Stocul nu poate fi negativ!")]
         public int InStock { get; set; }
-        
-        public string CategoriesIdsSerialized { get; set; }
+
+        [Required]
+        [MinCategoriesCount(1, ErrorMessage = "Trebuie selectata cel putin o categorie!")]
+        public IList<ItemNewCategoriesCheckBoxModel> Categories { set; get; }
     }
 }

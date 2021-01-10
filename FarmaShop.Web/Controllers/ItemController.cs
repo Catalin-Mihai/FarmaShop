@@ -16,15 +16,21 @@ namespace FarmaShop.Web.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly IRepository<Item> _itemRepository;
+        private readonly ItemRepository _itemRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IRepository<Category> _categoryRepository;
+        private readonly IRepository<ShoppingCartItem> _shoppingCartRepository;
+        private readonly IRepository<OrderDetail> _orderDetailRepository;
+        private readonly IRepository<Order> _orderRepository;
 
-        public ItemController(IRepository<Item> itemRepository, UserManager<ApplicationUser> userManager, IRepository<Category> categoryRepository)
+        public ItemController(ItemRepository itemRepository, UserManager<ApplicationUser> userManager, IRepository<Category> categoryRepository, IRepository<ShoppingCartItem> shoppingCartRepository, IRepository<OrderDetail> orderDetailRepository, IRepository<Order> orderRepository)
         {
             _itemRepository = itemRepository;
             _userManager = userManager;
             _categoryRepository = categoryRepository;
+            _shoppingCartRepository = shoppingCartRepository;
+            _orderDetailRepository = orderDetailRepository;
+            _orderRepository = orderRepository;
         }
 
         async public Task<IActionResult> Index(int id, int fromCategory)
@@ -77,31 +83,27 @@ namespace FarmaShop.Web.Controllers
             return View(model);
         }
 
-        public IActionResult New(int id)
+        async public Task<IActionResult> New(int id)
         {
-            //Populate the new item category with the category id received
-            var categoriesIds = new List<int> {id};
-            
-            var newItemModel = new ItemNewModel {
-                //Serialize the categories list because we can't use complex data types in views
-                CategoriesIdsSerialized = JsonConvert.SerializeObject(categoriesIds)
-            };
+            var allCategories = (await _categoryRepository.GetAll()).ToList();
+
+            var newItemModel = DataMapper.ModelMapper.ToItemNewModel(allCategories);
 
             return View(newItemModel);
         }
         
         [HttpPost]
-        async public Task<IActionResult> Create(ItemNewModel categoryModel)
+        async public Task<IActionResult> Create(ItemNewModel itemModel)
         {
             if (ModelState.IsValid) {
                 Console.WriteLine("Model valid!");
-                var dbModel = await DataMapper.ModelMapper.ToItemDbModel(categoryModel, _categoryRepository);
+                var dbModel = await DataMapper.ModelMapper.ToItemDbModel(itemModel, _categoryRepository);
                 await _itemRepository.Add(dbModel);
                 await _itemRepository.SaveChangesAsync();
             }
             else {
                 Console.WriteLine("Model invalid!");
-                return View("New", categoryModel);
+                return View("New", itemModel);
             }
 
             return RedirectToAction("Index", "Home");
@@ -110,8 +112,10 @@ namespace FarmaShop.Web.Controllers
         
         async public Task<IActionResult> Edit(int id)
         {
-            var itemDbModel = await _itemRepository.GetById(id);
-            var itemEditModel = DataMapper.ModelMapper.ToItemUpdateModel(itemDbModel);
+            var allCategories = (await _categoryRepository.GetAll()).ToList();
+            
+            var itemDbModel = (await _itemRepository.Get(x=>x.Id == id, includeProperties:"Categories")).FirstOrDefault();
+            var itemEditModel = DataMapper.ModelMapper.ToItemUpdateModel(itemDbModel, allCategories);
             Console.WriteLine("A plecat cu id: " + itemEditModel.Id);
             return View(itemEditModel);
         }
@@ -121,9 +125,28 @@ namespace FarmaShop.Web.Controllers
         {
             if (ModelState.IsValid) {
                 Console.WriteLine("Model valid!");
-                var dbModel = await DataMapper.ModelMapper.ToItemDbModel(categoryUpdateModel);
-                _itemRepository.Update(dbModel);
-                await _categoryRepository.SaveChangesAsync();
+                var dbModel = await DataMapper.ModelMapper.ToItemDbModel(categoryUpdateModel, _categoryRepository);
+                
+                //To delete the many to many relationships between an item and a category
+                //the easiest way is to delete the item and recreate it
+
+                // var categories = (await _categoryRepository.Get(
+                //     x => dbModel.Categories.Select(y => y.Id).Contains(x.Id), 
+                //     includeProperties:"Items")).ToList();
+
+                // var categories = dbModel.Categories;
+                //
+                // foreach (var category in categories) {
+                //     if (category.Items.Select(x => x.Id).Contains(dbModel.Id) == false) {
+                //         var itemList = category.Items as HashSet<Item>;
+                //         itemList?.Add(dbModel);
+                //         category.Items = itemList;
+                //         _categoryRepository.Update(category);
+                //     }
+                // }
+                _itemRepository.UpdateCategories(dbModel);
+                
+                await _itemRepository.SaveChangesAsync();
             }
             else {
                 Console.WriteLine("Model invalid!");
@@ -141,7 +164,29 @@ namespace FarmaShop.Web.Controllers
             var itemDb = await _itemRepository.GetById(id);
 
             if (itemDb != null) {
+                //Delete in cascade
+                
+                //Shopping cart
+                var cartItems = (await _shoppingCartRepository.Get(x => x.ItemId == itemDb.Id)).ToList();
+                _shoppingCartRepository.DeleteRange(cartItems);
+                
+                //Orders
+                var ordersDetails = (await _orderDetailRepository.Get(x => x.Id == itemDb.Id)).ToList();
+                foreach (var orderDetail in ordersDetails) {
+                    //Update the price of the order
+                    var order = orderDetail.Order;
+                    
+                    order.OrderTotal -= orderDetail.Amount * orderDetail.Price;
+                    
+                    _orderRepository.Update(order);
+                    
+                    //delete order detail
+                    _orderDetailRepository.Delete(orderDetail);
+                }
+
+                //Now delete the item
                 _itemRepository.Delete(itemDb);
+                
                 await _itemRepository.SaveChangesAsync();
                 return Ok();
             }

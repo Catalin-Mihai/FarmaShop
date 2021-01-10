@@ -10,7 +10,7 @@ namespace FarmaShop.Web.Models.Order
         public string ZipCode { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 6, ErrorMessage="Adresa trebuie sa aiba intre 6 si 50 caractere!")] 
+        [StringLength(100, MinimumLength = 6, ErrorMessage="Adresa trebuie sa aiba intre 6 si 50 caractere!")] 
         public string Address { get; set; }
 
         [Required]
