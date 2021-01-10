@@ -7,13 +7,14 @@ namespace FarmaShop.Web.Models.Category
     public class CategoryNewModel
     {
         [Required]
+        [StringLength(20, ErrorMessage="Numele este prea lung!")]  
         public string Name { get; set; }
         
         [Required]
         public string Description { get; set; }
 
         [Required]
-        [ImageMemorySize(1024, ErrorMessage = "File is too large")]
+        [ImageMemorySize(4096, ErrorMessage = "Fisierul este prea mare!")]
         public IFormFile Image { get; set; }
         
     }

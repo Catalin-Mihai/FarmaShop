@@ -117,6 +117,7 @@
                 <e p="Manage" t="Include">
                   <e p="_Layout.cshtml" t="Include" />
                   <e p="_ManageNav.cshtml" t="Include" />
+                  <e p="_OrderDetailsPartial.cshtml" t="Include" />
                   <e p="_StatusMessage.cshtml" t="Include" />
                   <e p="_ViewImports.cshtml" t="Include" />
                   <e p="ChangePassword.cshtml" t="Include" />
@@ -138,6 +139,8 @@
                   <e p="Index.cshtml" t="Include" />
                   <e p="Index.cshtml.cs" t="Include" />
                   <e p="ManageNavPages.cs" t="Include" />
+                  <e p="Orders.cshtml" t="Include" />
+                  <e p="Orders.cshtml.cs" t="Include" />
                   <e p="PersonalData.cshtml" t="Include" />
                   <e p="PersonalData.cshtml.cs" t="Include" />
                   <e p="ResetAuthenticator.cshtml" t="Include" />
@@ -229,7 +232,6 @@
           </e>
           <e p="Category" t="Include">
             <e p="CategoryHomeItemsViewModel.cs" t="Include" />
-            <e p="CategoryMenuItemsViewModel.cs" t="Include" />
           </e>
           <e p="ConfirmationDialogViewModel.cs" t="Include" />
           <e p="Item" t="Include">

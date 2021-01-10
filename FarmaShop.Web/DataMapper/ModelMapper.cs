@@ -246,14 +246,7 @@ namespace FarmaShop.Web.DataMapper
 
                 return categoryMenuItemModel;
             }
-            
-            public static CategoryMenuItemsViewModel ToCategoryMenuItemsViewModel(IEnumerable<Category> categories)
-            {
-                return new CategoryMenuItemsViewModel {
-                    Categories = new List<CategoryMenuItemModel>(categories.Select(ToCategoryMenuItemModel))
-                };
-            }
-            
+        
             #endregion
 
 

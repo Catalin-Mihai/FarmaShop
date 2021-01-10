@@ -16,16 +16,12 @@ namespace FarmaShop.Web.Controllers
         private readonly IRepository<Item> _itemRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IRepository<ShoppingCartItem> _shoppingCartItemRepository;
-        private readonly IRepository<Order> _orderRepository;
-        private readonly OrderDetailRepository _orderDetailRepository;
 
-        public CartController(UserManager<ApplicationUser> userManager, IRepository<ShoppingCartItem> shoppingCartItemRepository, IRepository<Item> itemRepository, IRepository<Order> orderRepository, IRepository<OrderDetail> orderDetailRepository)
+        public CartController(UserManager<ApplicationUser> userManager, IRepository<ShoppingCartItem> shoppingCartItemRepository, IRepository<Item> itemRepository)
         {
             _userManager = userManager;
             _shoppingCartItemRepository = shoppingCartItemRepository;
             _itemRepository = itemRepository;
-            _orderRepository = orderRepository;
-            _orderDetailRepository = (OrderDetailRepository) orderDetailRepository;
         }
 
         // GET
