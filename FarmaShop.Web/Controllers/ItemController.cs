@@ -89,6 +89,12 @@ namespace FarmaShop.Web.Controllers
 
             var newItemModel = DataMapper.ModelMapper.ToItemNewModel(allCategories);
 
+            for (int i = 0; i < newItemModel.Categories.Count; i++) {
+                if (newItemModel.Categories[i].Id == id) {
+                    newItemModel.Categories[i].Checked = true;
+                }
+            }
+
             return View(newItemModel);
         }
         
@@ -116,6 +122,9 @@ namespace FarmaShop.Web.Controllers
             
             var itemDbModel = (await _itemRepository.Get(x=>x.Id == id, includeProperties:"Categories")).FirstOrDefault();
             var itemEditModel = DataMapper.ModelMapper.ToItemUpdateModel(itemDbModel, allCategories);
+            
+            // _itemRepository.DetachEntity(itemDbModel);
+            
             Console.WriteLine("A plecat cu id: " + itemEditModel.Id);
             return View(itemEditModel);
         }
@@ -144,7 +153,9 @@ namespace FarmaShop.Web.Controllers
                 //         _categoryRepository.Update(category);
                 //     }
                 // }
-                _itemRepository.UpdateCategories(dbModel);
+                // _itemRepository.DetachEntity();
+                _itemRepository.Update(dbModel);
+                // _itemRepository.Update(dbModel);
                 
                 await _itemRepository.SaveChangesAsync();
             }

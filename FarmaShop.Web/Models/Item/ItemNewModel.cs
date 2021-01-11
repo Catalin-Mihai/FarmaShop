@@ -17,6 +17,7 @@ namespace FarmaShop.Web.Models.Item
         public string ShortDescription { get; set; }
         
         [Required]
+        [StringLength(1024, ErrorMessage="Descrierea este prea lunga!")]
         public string LongDescription { get; set; }
         
         [Required]

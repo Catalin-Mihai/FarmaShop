@@ -97,6 +97,7 @@ namespace FarmaShop.Data.Repositories
         public virtual void Update(TEntity entityToUpdate)
         {
             _dbSet.Attach(entityToUpdate);
+            
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 

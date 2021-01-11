@@ -6,5 +6,7 @@
         public string Name { set; get; }
         
         public string ImageUrl { set; get; }
+        
+        public string Description { set; get; }
     }
 }

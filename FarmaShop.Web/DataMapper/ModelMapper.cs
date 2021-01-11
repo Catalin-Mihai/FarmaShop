@@ -256,8 +256,7 @@ namespace FarmaShop.Web.DataMapper
 
                 foreach (var category in updateModel.Categories) {
                     if (category.Checked) {
-                        var categoryDb = (await repository.Get(x => x.Id == category.Id,
-                            includeProperties:"Items")).First();
+                        var categoryDb = (await repository.Get(x => x.Id == category.Id)).First();
                         if (categoryDb != null)
                             dbModel.Categories.Add(categoryDb); 
                     }
@@ -294,7 +293,8 @@ namespace FarmaShop.Web.DataMapper
                 var categoryHomeItemModel = new CategoryHomeItemModel {
                     Id = category.Id,
                     Name = category.Name,
-                    ImageUrl = ToBase64String(category.Image)
+                    ImageUrl = ToBase64String(category.Image),
+                    Description = category.Description
                 };
 
                 return categoryHomeItemModel;

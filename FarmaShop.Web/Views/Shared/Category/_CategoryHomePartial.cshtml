@@ -13,6 +13,7 @@
         <img class="card-img-top m-2" src="@image"
              alt="@Model.Name Image" onclick="location.href='@Url.Action("Items", "Category", new {id = Model.Id})'">
         <h5 class="card-title">@Model.Name</h5>
+         <p class="card-text">@Model.Description</p>
     </div>
     @if (User.IsInRole("Admin") && Model.Id != -1)
     {

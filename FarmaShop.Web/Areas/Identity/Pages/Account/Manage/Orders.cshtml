@@ -58,6 +58,11 @@
                         <p>Cod postal: @order.ZipCode</p>
                         <p>Adresa: @order.Address</p>
                     </div>
+
+                    <form asp-page-handler="Delete" method="post" asp-route-id='@order.Id'>
+                        <button  class="btn btn-danger">Sterge comanda</button>
+                    </form>
+
                 </li>
             }
         </ul>

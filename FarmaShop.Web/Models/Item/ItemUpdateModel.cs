@@ -17,6 +17,7 @@ namespace FarmaShop.Web.Models.Item
         [StringLength(64, ErrorMessage="Descrierea este prea lunga!")] 
         public string ShortDescription { get; set; }
         
+        [StringLength(1024, ErrorMessage="Descrierea este prea lunga!")]
         public string LongDescription { get; set; }
         
         [Range(0, Int32.MaxValue, ErrorMessage = "Pretul nu poate fi negativ!")]

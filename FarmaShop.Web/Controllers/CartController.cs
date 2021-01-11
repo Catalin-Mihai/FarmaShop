@@ -84,12 +84,13 @@ namespace FarmaShop.Web.Controllers
 
             //Security concerns
             //Do we trust client side built update model???
+            //Yes!
             var updateCartItemDbModel = DataMapper.ModelMapper.FromCartItemModel(updateCartItem);
             
             if (updateCartItemDbModel == null)
                 return BadRequest();
 
-            if (updateCartItemDbModel.Amount >= updateCartItemDbModel.Item.InStock)
+            if (updateCartItemDbModel.Amount > updateCartItemDbModel.Item.InStock)
                 return BadRequest("Nu exista stoc suficient!");
 
             _shoppingCartItemRepository.Update(updateCartItemDbModel);

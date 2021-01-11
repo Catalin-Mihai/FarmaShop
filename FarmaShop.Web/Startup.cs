@@ -98,7 +98,9 @@ namespace FarmaShop.Web
 
             var seeder = new Seeder(serviceProvider, Configuration);
             seeder.CreateRoles().Wait();
-            seeder.PopulateDatabase().Wait();
+            
+            //UNCOMENT THIS WHEN YOU WANT FRESH DATA
+            // seeder.PopulateDatabase(forceOverride: true).Wait();
         }
     }
 }

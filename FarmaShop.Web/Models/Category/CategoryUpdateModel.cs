@@ -11,6 +11,7 @@ namespace FarmaShop.Web.Models.Category
         [StringLength(20, ErrorMessage="Numele este prea lung!")]  
         public string Name { get; set; }
         
+        [StringLength(64, ErrorMessage="Descrierea este prea lunga!")]
         public string Description { get; set; }
         
         public string OldImageUrl { get; set; }

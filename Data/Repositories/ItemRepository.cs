@@ -12,10 +12,10 @@ namespace FarmaShop.Data.Repositories
         {
         }
         
-        public void UpdateCategories(Item item)
+        public override void Update(Item item)
         {
             var categories = item.Categories as List<Category>;
-            
+
             //Delete all relationships and remake them
             var queryString = "DELETE FROM CategoryItem WHERE ItemsId = " + item.Id;
             _context.Database.ExecuteSqlRaw(queryString);
@@ -26,6 +26,8 @@ namespace FarmaShop.Data.Repositories
                     var queryString2 = "INSERT INTO CategoryItem VALUES(" + category.Id + ", " + item.Id + ")";
                     _context.Database.ExecuteSqlRaw(queryString2);
                 }
+            
+            base.Update(item);
         }
     }
 }
